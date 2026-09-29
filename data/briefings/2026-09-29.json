@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-29",
+  "title": "DDR早报 2026-09-29",
+  "summary": "现货 DDR5 窄幅盘整，DDR4 持续阴跌，HBM 挤占常规产能预期升温。",
+  "body_markdown": "## 价格面\n\n现货市场 DDR5 16Gb 报 $4.05，日环比 +0.4%，窄幅震荡。DDR4 8Gb 报 $1.82，日环比 -1.1%，延续阴跌走势。模组端 DDR5 UDIMM 16GB 报 $42，基本持平。\n\n## 供给面\n\n三星、SK 海力士持续将先进产能向 HBM3e/HBM4 倾斜，常规 DDR5 产能增长有限。CXMT 扩产进度中规中矩，对冲效果尚不明显。\n\n## 厂商动态\n\n- 三星加速 HBM4 客户送样，预计 2027 年量产\n- 美光指引 FY27 DRAM capex 维持高位\n\n## 关注点\n\n- 10 月 DRAM 合约价谈判窗口\n- HBM4 良率爬坡进度对常规产能的挤占幅度",
+  "price_overview_markdown": "现货：DDR5 16Gb $4.05 (+0.4% DoD)；DDR4 8Gb $1.82 (-1.1% DoD)。合约：DDR4 8Gb $1.95（9月）。",
+  "supply_demand_points": [
+    "Server 需求仍强，但消费类 DRAM 备货节奏偏缓",
+    "HBM3e 良率爬坡挤占部分 DDR5 产能",
+    "模组端库存水位偏高，短期涨价动力不足"
+  ],
+  "outlook_markdown": "短期维持震荡格局，DDR4 仍有下行压力，DDR5 相对抗跌。关注 10 月合约价谈判结果。",
+  "watch_items": [
+    "Samsung HBM4 送样进度",
+    "10 月 DRAM 合约价",
+    "CXMT DDR5 良率与出货"
+  ],
+  "bullish_points": [
+    "HBM 挤占常规 DDR5 产能",
+    "Server 需求持续旺盛"
+  ],
+  "bearish_points": [
+    "消费端需求疲软",
+    "模组库存偏高"
+  ],
+  "confidence": "medium",
+  "generated_at": "2026-09-29T01:28:11Z"
+}

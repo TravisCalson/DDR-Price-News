@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-29",
+  "items": [
+    {
+      "id": "2026-09-29-samsung-hbm4",
+      "vendor": "Samsung",
+      "tags": ["HBM", "capacity"],
+      "title": "三星加速 HBM4 送样，常规 DRAM 产能承压",
+      "summary": "三星正在向主要客户加速 HBM4 样品交付，预计 2027 年量产。HBM4 采用更先进封装工艺，将进一步挤占常规 DDR5 产能。",
+      "url": "https://www.trendforce.com/",
+      "source_name": "TrendForce",
+      "published_date": "2026-09-28",
+      "impact": "supply",
+      "importance": "high"
+    },
+    {
+      "id": "2026-09-29-micron-capex",
+      "vendor": "Micron",
+      "tags": ["capex", "capacity"],
+      "title": "美光 FY27 资本开支指引维持高位，重点投向 HBM 与先进 DRAM",
+      "summary": "美光在最新财报电话会上表示 FY27 资本开支将继续维持高位，主要用于 HBM 产能扩张和先进制程 DRAM，常规 DDR4 产线投入有限。",
+      "url": "https://www.micron.com/",
+      "source_name": "Micron IR",
+      "published_date": "2026-09-27",
+      "impact": "supply",
+      "importance": "medium"
+    },
+    {
+      "id": "2026-09-29-hynix-ddr5",
+      "vendor": "SK Hynix",
+      "tags": ["DDR5", "price"],
+      "title": "SK 海力士 DDR5 现货报价小幅上调",
+      "summary": "SK 海力士 DDR5 16Gb 现货报价本周小幅上调约 1%，反映服务器需求持续。但渠道端库存偏高抑制了涨幅。",
+      "url": "https://www.skhynix.com/",
+      "source_name": "DRAMeXchange",
+      "published_date": "2026-09-28",
+      "impact": "price",
+      "importance": "medium"
+    },
+    {
+      "id": "2026-09-29-cxmt-ddr5",
+      "vendor": "CXMT",
+      "tags": ["DDR5", "capacity"],
+      "title": "长鑫存储 DDR5 良率持续爬坡，月产能稳步提升",
+      "summary": "长鑫存储 DDR5 产品良率持续改善，月产能稳步提升，对国内 DDR5 供给形成一定补充，但对全球价格影响仍有限。",
+      "url": "https://www.cxmt.com/",
+      "source_name": "ChinaFlashMarket",
+      "published_date": "2026-09-26",
+      "impact": "supply",
+      "importance": "low"
+    }
+  ]
+}

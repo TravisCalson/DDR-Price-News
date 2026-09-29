@@ -1,0 +1,250 @@
+{
+  "date": "2026-09-29",
+  "price": {
+    "schema_version": 1,
+    "date": "2026-09-29",
+    "generated_at": "2026-09-29T01:28:11Z",
+    "currency_note": "USD unless currency field says otherwise",
+    "granules": [
+      {
+        "id": "ddr4_8gbit",
+        "category": "DDR4",
+        "density": "8Gb",
+        "spec": "Fx-3200 / mainstream",
+        "price_usd": 1.82,
+        "change_dod_pct": -1.1,
+        "change_wow_pct": -3.4,
+        "currency": "USD",
+        "unit": "per chip",
+        "confidence": "medium",
+        "note": "spot, Asia market"
+      },
+      {
+        "id": "ddr4_16gbit",
+        "category": "DDR4",
+        "density": "16Gb",
+        "spec": "mainstream",
+        "price_usd": 3.45,
+        "change_dod_pct": 0.0,
+        "change_wow_pct": null,
+        "currency": "USD",
+        "unit": "per chip",
+        "confidence": "low",
+        "note": null
+      },
+      {
+        "id": "ddr5_8gbit",
+        "category": "DDR5",
+        "density": "8Gb",
+        "spec": "4800-5600",
+        "price_usd": 2.1,
+        "change_dod_pct": -0.5,
+        "change_wow_pct": -2.0,
+        "currency": "USD",
+        "unit": "per chip",
+        "confidence": "high",
+        "note": null
+      },
+      {
+        "id": "ddr5_16gbit",
+        "category": "DDR5",
+        "density": "16Gb",
+        "spec": "4800-6400",
+        "price_usd": 4.05,
+        "change_dod_pct": 0.4,
+        "change_wow_pct": 1.2,
+        "currency": "USD",
+        "unit": "per chip",
+        "confidence": "high",
+        "note": null
+      }
+    ],
+    "modules": [
+      {
+        "id": "ddr4_udimm_16gb",
+        "category": "DDR4",
+        "form": "UDIMM",
+        "capacity": "16GB",
+        "spec": "3200",
+        "price_usd": 28.5,
+        "change_dod_pct": -0.8,
+        "change_wow_pct": null,
+        "currency": "USD",
+        "unit": "per module",
+        "confidence": "medium",
+        "note": null
+      },
+      {
+        "id": "ddr5_udimm_16gb",
+        "category": "DDR5",
+        "form": "UDIMM",
+        "capacity": "16GB",
+        "spec": "4800/5600",
+        "price_usd": 42.0,
+        "change_dod_pct": 0.2,
+        "change_wow_pct": null,
+        "currency": "USD",
+        "unit": "per module",
+        "confidence": "medium",
+        "note": null
+      },
+      {
+        "id": "ddr5_rdimm_32gb",
+        "category": "DDR5",
+        "form": "RDIMM",
+        "capacity": "32GB",
+        "spec": "4800/5600",
+        "price_usd": 92.0,
+        "change_dod_pct": 0.0,
+        "change_wow_pct": null,
+        "currency": "USD",
+        "unit": "per module",
+        "confidence": "medium",
+        "note": null
+      },
+      {
+        "id": "ddr5_rdimm_64gb",
+        "category": "DDR5",
+        "form": "RDIMM",
+        "capacity": "64GB",
+        "spec": "4800/5600",
+        "price_usd": 185.0,
+        "change_dod_pct": null,
+        "change_wow_pct": null,
+        "currency": "USD",
+        "unit": "per module",
+        "confidence": "low",
+        "note": null
+      }
+    ],
+    "contract": [
+      {
+        "id": "ddr4_8gbit_contract",
+        "category": "DDR4",
+        "density": "8Gb",
+        "price_usd": 1.95,
+        "period": "2026-09 monthly",
+        "currency": "USD",
+        "confidence": "low",
+        "note": "contract price may lag spot"
+      },
+      {
+        "id": "ddr5_8gbit_contract",
+        "category": "DDR5",
+        "density": "8Gb",
+        "price_usd": 2.3,
+        "period": "2026-09 monthly",
+        "currency": "USD",
+        "confidence": "low",
+        "note": null
+      }
+    ],
+    "fx": {
+      "usd_cny": 7.12
+    },
+    "sources": [
+      {
+        "name": "TrendForce",
+        "url": "https://www.trendforce.com/",
+        "retrieved_at": "2026-09-29"
+      }
+    ],
+    "data_quality": "partial",
+    "data_quality_note": "DDR4 16Gb and DDR5 RDIMM 64GB quotes have low confidence"
+  },
+  "briefing": {
+    "schema_version": 1,
+    "date": "2026-09-29",
+    "title": "DDR早报 2026-09-29",
+    "summary": "现货 DDR5 窄幅盘整，DDR4 持续阴跌，HBM 挤占常规产能预期升温。",
+    "body_markdown": "## 价格面\n\n现货市场 DDR5 16Gb 报 $4.05，日环比 +0.4%，窄幅震荡。DDR4 8Gb 报 $1.82，日环比 -1.1%，延续阴跌走势。模组端 DDR5 UDIMM 16GB 报 $42，基本持平。\n\n## 供给面\n\n三星、SK 海力士持续将先进产能向 HBM3e/HBM4 倾斜，常规 DDR5 产能增长有限。CXMT 扩产进度中规中矩，对冲效果尚不明显。\n\n## 厂商动态\n\n- 三星加速 HBM4 客户送样，预计 2027 年量产\n- 美光指引 FY27 DRAM capex 维持高位\n\n## 关注点\n\n- 10 月 DRAM 合约价谈判窗口\n- HBM4 良率爬坡进度对常规产能的挤占幅度",
+    "price_overview_markdown": "现货：DDR5 16Gb $4.05 (+0.4% DoD)；DDR4 8Gb $1.82 (-1.1% DoD)。合约：DDR4 8Gb $1.95（9月）。",
+    "supply_demand_points": [
+      "Server 需求仍强，但消费类 DRAM 备货节奏偏缓",
+      "HBM3e 良率爬坡挤占部分 DDR5 产能",
+      "模组端库存水位偏高，短期涨价动力不足"
+    ],
+    "outlook_markdown": "短期维持震荡格局，DDR4 仍有下行压力，DDR5 相对抗跌。关注 10 月合约价谈判结果。",
+    "watch_items": [
+      "Samsung HBM4 送样进度",
+      "10 月 DRAM 合约价",
+      "CXMT DDR5 良率与出货"
+    ],
+    "bullish_points": [
+      "HBM 挤占常规 DDR5 产能",
+      "Server 需求持续旺盛"
+    ],
+    "bearish_points": [
+      "消费端需求疲软",
+      "模组库存偏高"
+    ],
+    "confidence": "medium",
+    "generated_at": "2026-09-29T01:28:11Z"
+  },
+  "news": {
+    "schema_version": 1,
+    "date": "2026-09-29",
+    "items": [
+      {
+        "id": "2026-09-29-samsung-hbm4",
+        "vendor": "Samsung",
+        "tags": [
+          "HBM",
+          "capacity"
+        ],
+        "title": "三星加速 HBM4 送样，常规 DRAM 产能承压",
+        "summary": "三星正在向主要客户加速 HBM4 样品交付，预计 2027 年量产。HBM4 采用更先进封装工艺，将进一步挤占常规 DDR5 产能。",
+        "url": "https://www.trendforce.com/",
+        "source_name": "TrendForce",
+        "published_date": "2026-09-28",
+        "impact": "supply",
+        "importance": "high"
+      },
+      {
+        "id": "2026-09-29-micron-capex",
+        "vendor": "Micron",
+        "tags": [
+          "capex",
+          "capacity"
+        ],
+        "title": "美光 FY27 资本开支指引维持高位，重点投向 HBM 与先进 DRAM",
+        "summary": "美光在最新财报电话会上表示 FY27 资本开支将继续维持高位，主要用于 HBM 产能扩张和先进制程 DRAM，常规 DDR4 产线投入有限。",
+        "url": "https://www.micron.com/",
+        "source_name": "Micron IR",
+        "published_date": "2026-09-27",
+        "impact": "supply",
+        "importance": "medium"
+      },
+      {
+        "id": "2026-09-29-hynix-ddr5",
+        "vendor": "SK Hynix",
+        "tags": [
+          "DDR5",
+          "price"
+        ],
+        "title": "SK 海力士 DDR5 现货报价小幅上调",
+        "summary": "SK 海力士 DDR5 16Gb 现货报价本周小幅上调约 1%，反映服务器需求持续。但渠道端库存偏高抑制了涨幅。",
+        "url": "https://www.skhynix.com/",
+        "source_name": "DRAMeXchange",
+        "published_date": "2026-09-28",
+        "impact": "price",
+        "importance": "medium"
+      },
+      {
+        "id": "2026-09-29-cxmt-ddr5",
+        "vendor": "CXMT",
+        "tags": [
+          "DDR5",
+          "capacity"
+        ],
+        "title": "长鑫存储 DDR5 良率持续爬坡，月产能稳步提升",
+        "summary": "长鑫存储 DDR5 产品良率持续改善，月产能稳步提升，对国内 DDR5 供给形成一定补充，但对全球价格影响仍有限。",
+        "url": "https://www.cxmt.com/",
+        "source_name": "ChinaFlashMarket",
+        "published_date": "2026-09-26",
+        "impact": "supply",
+        "importance": "low"
+      }
+    ]
+  }
+}

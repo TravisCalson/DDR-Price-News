@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DDR 内存行情速递</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.3/dist/purify.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <h1>DDR 内存行情速递</h1>
+      <div class="header-meta">
+        <span id="update-time"></span>
+      </div>
+    </div>
+    <nav class="nav" id="main-nav">
+      <a href="#overview" class="nav-link active" data-section="overview">今日概览</a>
+      <a href="#prices" class="nav-link" data-section="prices">价格行情</a>
+      <a href="#briefing" class="nav-link" data-section="briefing">每日早报</a>
+      <a href="#trends" class="nav-link" data-section="trends">趋势分析</a>
+      <a href="#news" class="nav-link" data-section="news">厂商动态</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <!-- Section 1: Overview -->
+    <section id="overview" class="section active">
+      <h2>今日概览</h2>
+      <div class="kpi-grid" id="kpi-grid"></div>
+      <div class="briefing-summary-card" id="briefing-summary-card"></div>
+    </section>
+
+    <!-- Section 2: Prices -->
+    <section id="prices" class="section">
+      <h2>价格行情</h2>
+      <div class="tab-bar" id="price-tabs">
+        <button class="tab active" data-tab="granules">颗粒</button>
+        <button class="tab" data-tab="modules">模组</button>
+        <button class="tab" data-tab="contract">合约</button>
+      </div>
+      <div class="table-wrap">
+        <table class="price-table" id="price-table">
+          <thead>
+            <tr>
+              <th>品类</th>
+              <th>规格</th>
+              <th>价格 (USD)</th>
+              <th>日环比</th>
+              <th>周环比</th>
+              <th>置信度</th>
+              <th>备注</th>
+            </tr>
+          </thead>
+          <tbody id="price-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 3: Briefing -->
+    <section id="briefing" class="section">
+      <h2>每日早报</h2>
+      <div class="briefing-layout">
+        <div class="briefing-sidebar">
+          <div class="date-list" id="briefing-date-list"></div>
+        </div>
+        <div class="briefing-content" id="briefing-content">
+          <p class="empty-hint">选择左侧日期查看早报</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Trends -->
+    <section id="trends" class="section">
+      <h2>趋势分析</h2>
+      <div class="chart-controls">
+        <div class="range-buttons" id="range-buttons">
+          <button class="range-btn active" data-days="30">30天</button>
+          <button class="range-btn" data-days="90">90天</button>
+          <button class="range-btn" data-days="180">180天</button>
+          <button class="range-btn" data-days="365">365天</button>
+        </div>
+      </div>
+      <div class="chart-grid">
+        <div class="chart-card">
+          <h3>颗粒价格趋势</h3>
+          <div class="chart-container">
+            <canvas id="granule-chart"></canvas>
+          </div>
+        </div>
+        <div class="chart-card">
+          <h3>模组价格趋势</h3>
+          <div class="chart-container">
+            <canvas id="module-chart"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="supply-demand" id="supply-demand"></div>
+    </section>
+
+    <!-- Section 5: News -->
+    <section id="news" class="section">
+      <h2>厂商动态</h2>
+      <div class="filter-chips" id="news-filters">
+        <button class="chip active" data-vendor="all">全部</button>
+        <button class="chip" data-vendor="Samsung">Samsung</button>
+        <button class="chip" data-vendor="SK Hynix">SK Hynix</button>
+        <button class="chip" data-vendor="Micron">Micron</button>
+        <button class="chip" data-vendor="CXMT">CXMT</button>
+      </div>
+      <div class="news-list" id="news-list"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>数据由 AI 每日自动采集整理，仅供参考。价格来源见各条目链接。投资/采购决策请以官方报价为准。</p>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

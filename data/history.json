@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "updated": "2026-09-29T01:28:11Z",
+  "series_meta": {
+    "ddr4_8gbit": {
+      "label": "DDR4 8Gb",
+      "unit": "USD",
+      "category": "DDR4"
+    },
+    "ddr4_16gbit": {
+      "label": "DDR4 16Gb",
+      "unit": "USD",
+      "category": "DDR4"
+    },
+    "ddr5_8gbit": {
+      "label": "DDR5 8Gb",
+      "unit": "USD",
+      "category": "DDR5"
+    },
+    "ddr5_16gbit": {
+      "label": "DDR5 16Gb",
+      "unit": "USD",
+      "category": "DDR5"
+    },
+    "ddr4_udimm_16gb": {
+      "label": "DDR4 UDIMM 16GB",
+      "unit": "USD",
+      "category": "DDR4"
+    },
+    "ddr5_udimm_16gb": {
+      "label": "DDR5 UDIMM 16GB",
+      "unit": "USD",
+      "category": "DDR5"
+    },
+    "ddr5_rdimm_32gb": {
+      "label": "DDR5 RDIMM 32GB",
+      "unit": "USD",
+      "category": "DDR5"
+    },
+    "ddr5_rdimm_64gb": {
+      "label": "DDR5 RDIMM 64GB",
+      "unit": "USD",
+      "category": "DDR5"
+    },
+    "ddr4_8gbit_contract": {
+      "label": "DDR4 8Gb 合约",
+      "unit": "USD",
+      "category": "DDR4"
+    },
+    "ddr5_8gbit_contract": {
+      "label": "DDR5 8Gb 合约",
+      "unit": "USD",
+      "category": "DDR5"
+    }
+  },
+  "series": {
+    "ddr4_8gbit": [
+      {
+        "d": "2026-09-29",
+        "p": 1.82
+      }
+    ],
+    "ddr4_16gbit": [
+      {
+        "d": "2026-09-29",
+        "p": 3.45
+      }
+    ],
+    "ddr5_8gbit": [
+      {
+        "d": "2026-09-29",
+        "p": 2.1
+      }
+    ],
+    "ddr5_16gbit": [
+      {
+        "d": "2026-09-29",
+        "p": 4.05
+      }
+    ],
+    "ddr4_udimm_16gb": [
+      {
+        "d": "2026-09-29",
+        "p": 28.5
+      }
+    ],
+    "ddr5_udimm_16gb": [
+      {
+        "d": "2026-09-29",
+        "p": 42.0
+      }
+    ],
+    "ddr5_rdimm_32gb": [
+      {
+        "d": "2026-09-29",
+        "p": 92.0
+      }
+    ],
+    "ddr5_rdimm_64gb": [
+      {
+        "d": "2026-09-29",
+        "p": 185.0
+      }
+    ],
+    "ddr4_8gbit_contract": [
+      {
+        "d": "2026-09-29",
+        "p": 1.95
+      }
+    ],
+    "ddr5_8gbit_contract": [
+      {
+        "d": "2026-09-29",
+        "p": 2.3
+      }
+    ]
+  },
+  "briefings_index": [
+    {
+      "date": "2026-09-29",
+      "title": "DDR早报 2026-09-29",
+      "summary": "现货 DDR5 窄幅盘整，DDR4 持续阴跌，HBM 挤占常规产能预期升温。",
+      "watch_items": [
+        "Samsung HBM4 送样进度",
+        "10 月 DRAM 合约价",
+        "CXMT DDR5 良率与出货"
+      ]
+    }
+  ],
+  "news_index": [
+    {
+      "date": "2026-09-28",
+      "vendor": "Samsung",
+      "title": "三星加速 HBM4 送样，常规 DRAM 产能承压",
+      "url": "https://www.trendforce.com/",
+      "importance": "high"
+    },
+    {
+      "date": "2026-09-28",
+      "vendor": "SK Hynix",
+      "title": "SK 海力士 DDR5 现货报价小幅上调",
+      "url": "https://www.skhynix.com/",
+      "importance": "medium"
+    },
+    {
+      "date": "2026-09-27",
+      "vendor": "Micron",
+      "title": "美光 FY27 资本开支指引维持高位，重点投向 HBM 与先进 DRAM",
+      "url": "https://www.micron.com/",
+      "importance": "medium"
+    },
+    {
+      "date": "2026-09-26",
+      "vendor": "CXMT",
+      "title": "长鑫存储 DDR5 良率持续爬坡，月产能稳步提升",
+      "url": "https://www.cxmt.com/",
+      "importance": "low"
+    }
+  ]
+}
