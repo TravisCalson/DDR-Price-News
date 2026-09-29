@@ -54,8 +54,13 @@ export function renderBriefingSummary(container, briefing) {
   container.innerHTML = `
     <h3>${briefing.title}</h3>
     <p>${briefing.summary}</p>
-    <p style="margin-top:8px"><a href="#briefing" style="color:var(--primary)">查看完整早报 →</a></p>
+    <p style="margin-top:8px"><a href="#briefing" class="nav-link" data-section="briefing" style="color:var(--primary);display:inline-block;padding:4px 0;border:none">查看完整早报 →</a></p>
   `;
+  // Trigger nav click for the link
+  container.querySelector('a[data-section]')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelector('.nav-link[data-section="briefing"]')?.click();
+  });
 }
 
 // === Price Table ===
