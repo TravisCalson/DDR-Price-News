@@ -5,19 +5,25 @@ Scrapes public sources for DDR price news and generates daily artifacts.
 Usage:
   python scripts/daily_update.py [--date 2026-09-29]
 """
+from __future__ import annotations
+
 import argparse
 import json
 import re
 import sys
 from datetime import datetime, timedelta
 from pathlib import Path
-from zoneinfo import ZoneInfo
+from datetime import timezone, timedelta
+
+CN_TZ = timezone(timedelta(hours=8))
+UTC = timezone.utc
 
 import requests
 from bs4 import BeautifulSoup
+from typing import Optional
 
 DATA_DIR = Path(__file__).parent.parent / "data"
-CN_TZ = ZoneInfo("Asia/Shanghai")
+CN_TZ = CN_TZ
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
 
 # Fixed series IDs
@@ -37,7 +43,7 @@ def get_target_date() -> str:
     return args.date or datetime.now(CN_TZ).strftime("%Y-%m-%d")
 
 
-def fetch_page(url: str, timeout: int = 15) -> str | None:
+def fetch_page(url: str, timeout: int = 15) -> Optional[str]:
     try:
         resp = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=timeout)
         resp.raise_for_status()
@@ -55,14 +61,22 @@ def scrape_trendforce_news() -> list[dict]:
         return items
 
     soup = BeautifulSoup(html, "html.parser")
-    # Find article links
+    # Find article links — skip navigation
+    SKIP_TITLES = {"memory & storage", "dram spot price", "dram contract price",
+                    "gddr spot price", "lpddr spot price", "mobile dram contract price",
+                    "memory card spot price", "nand flash spot price", "view all"}
     for a in soup.find_all("a", href=True):
         href = a.get("href", "")
         title = a.get_text(strip=True)
-        if not title or len(title) < 10:
+        if not title or len(title) < 15:
+            continue
+        if title.lower() in SKIP_TITLES:
+            continue
+        # Only press center articles
+        if "/presscenter/" not in href and "/news/" not in href:
             continue
         # Filter DDR/DRAM related
-        keywords = ["DDR", "DRAM", "memory", "HBM", "Samsung", "SK Hynix", "Micron", "Nanya", "内存"]
+        keywords = ["DDR", "DRAM", "HBM", "Samsung", "SK Hynix", "Micron", "Nanya", "memory", "price"]
         if any(kw.lower() in title.lower() for kw in keywords):
             url = href if href.startswith("http") else f"https://www.trendforce.com{href}"
             items.append({
@@ -93,25 +107,35 @@ def scrape_chinaflashmarket() -> list[dict]:
 
 
 def extract_prices_from_text(text: str) -> dict:
-    """Try to extract price numbers from text."""
+    """Try to extract price numbers from text. Only reasonable USD prices."""
     prices = {}
-    # Pattern: DDR4/DDR5 + number
+    # Skip speed specs (3200, 4800, 5600, 6400 etc.) — those are MHz not prices
+    SKIP_VALUES = {3200, 4800, 5600, 6400, 8000, 2666, 2400, 2133, 1866, 1600}
+
+    def is_real_price(val: float) -> bool:
+        if val in SKIP_VALUES:
+            return False
+        if val < 0.1 or val > 1000:
+            return False
+        return True
+
     patterns = [
-        (r'DDR4\s*8Gb[^\d]*?(\d+\.?\d*)', 'ddr4_8gbit'),
-        (r'DDR4\s*16Gb[^\d]*?(\d+\.?\d*)', 'ddr4_16gbit'),
-        (r'DDR5\s*8Gb[^\d]*?(\d+\.?\d*)', 'ddr5_8gbit'),
-        (r'DDR5\s*16Gb[^\d]*?(\d+\.?\d*)', 'ddr5_16gbit'),
-        (r'DDR4.*?UDIMM.*?16GB[^\d]*?(\d+\.?\d*)', 'ddr4_udimm_16gb'),
-        (r'DDR5.*?RDIMM.*?32GB[^\d]*?(\d+\.?\d*)', 'ddr5_rdimm_32gb'),
+        (r'DDR4\s*8Gb[^\d$]*?[\$]?(\d+\.?\d*)', 'ddr4_8gbit'),
+        (r'DDR4\s*16Gb[^\d$]*?[\$]?(\d+\.?\d*)', 'ddr4_16gbit'),
+        (r'DDR5\s*8Gb[^\d$]*?[\$]?(\d+\.?\d*)', 'ddr5_8gbit'),
+        (r'DDR5\s*16Gb[^\d$]*?[\$]?(\d+\.?\d*)', 'ddr5_16gbit'),
     ]
     for pat, sid in patterns:
-        m = re.search(pat, text, re.IGNORECASE)
-        if m:
-            prices[sid] = float(m.group(1))
+        for m in re.finditer(pat, text, re.IGNORECASE):
+            val = float(m.group(1))
+            if is_real_price(val):
+                prices[sid] = val
+                break
+
     return prices
 
 
-def make_price_item(id: str, price: float | None = None, **kw) -> dict:
+def make_price_item(id: str, price: Optional[float] = None, **kw) -> dict:
     cat = "DDR4" if "ddr4" in id else "DDR5"
     density = kw.get("density", "")
     form = kw.get("form", "")
@@ -165,7 +189,7 @@ def build_price_snapshot(news_items: list[dict], date: str) -> dict:
     return {
         "schema_version": 1,
         "date": date,
-        "generated_at": datetime.now(ZoneInfo("UTC")).isoformat().replace("+00:00", "Z"),
+        "generated_at": datetime.now(UTC).isoformat().replace("+00:00", "Z"),
         "currency_note": "USD unless currency field says otherwise",
         "granules": granules,
         "modules": modules,
@@ -245,7 +269,7 @@ def build_briefing(price_data: dict, news_items: list[dict], date: str) -> dict:
         "bullish_points": [],
         "bearish_points": [],
         "confidence": "low",
-        "generated_at": datetime.now(ZoneInfo("UTC")).isoformat().replace("+00:00", "Z"),
+        "generated_at": datetime.now(UTC).isoformat().replace("+00:00", "Z"),
     }
 
 
