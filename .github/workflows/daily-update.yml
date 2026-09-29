@@ -35,10 +35,8 @@ jobs:
       - name: Install dependencies
         run: pip install -r scripts/requirements.txt
 
-      - name: Generate daily artifacts (Claude)
+      - name: Generate daily artifacts (scrape)
         if: ${{ inputs.mode != 'aggregate' }}
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           ARGS=""
           if [ -n "${{ inputs.date }}" ]; then

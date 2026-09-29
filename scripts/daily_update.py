@@ -1,387 +1,289 @@
-"""daily_update.py — Generate daily DDR price snapshot, briefing, and news via Claude.
+"""daily_update.py — Free web scraping version (no API key needed).
 
-Two-phase approach:
-  Phase A: Claude + web_search/web_fetch → research notes
-  Phase B: Claude + structured output → DailyReport JSON
-
-Writes:
-  data/prices/YYYY-MM-DD.json
-  data/briefings/YYYY-MM-DD.json
-  data/news/YYYY-MM-DD.json
-  data/latest.json (delegated to aggregate.py)
+Scrapes public sources for DDR price news and generates daily artifacts.
 
 Usage:
-  ANTHROPIC_API_KEY=... python scripts/daily_update.py [--date 2026-09-29]
+  python scripts/daily_update.py [--date 2026-09-29]
 """
 import argparse
 import json
-import os
+import re
 import sys
-import time
 from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-import anthropic
-from pydantic import BaseModel, Field
+import requests
+from bs4 import BeautifulSoup
 
 DATA_DIR = Path(__file__).parent.parent / "data"
 CN_TZ = ZoneInfo("Asia/Shanghai")
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
 
-MODEL = "claude-opus-4-6"
-MAX_RETRIES = 3
-MAX_PAUSE_TURNS = 5
+# Fixed series IDs
+FIXED_GRANULES = ["ddr4_8gbit", "ddr4_16gbit", "ddr5_8gbit", "ddr5_16gbit"]
+FIXED_MODULES = ["ddr4_udimm_16gb", "ddr5_udimm_16gb", "ddr5_rdimm_32gb", "ddr5_rdimm_64gb"]
+FIXED_CONTRACT = ["ddr4_8gbit_contract", "ddr5_8gbit_contract"]
 
-
-# === Pydantic models for structured output ===
-class PriceItem(BaseModel):
-    id: str
-    category: str
-    density: str | None = None
-    spec: str | None = None
-    form: str | None = None
-    capacity: str | None = None
-    price_usd: float | None = None
-    change_dod_pct: float | None = None
-    change_wow_pct: float | None = None
-    currency: str = "USD"
-    unit: str = ""
-    period: str | None = None
-    confidence: str = "medium"
-    note: str | None = None
-
-
-class Source(BaseModel):
-    name: str
-    url: str
-    retrieved_at: str | None = None
-
-
-class PriceSnapshot(BaseModel):
-    granules: list[PriceItem]
-    modules: list[PriceItem]
-    contract: list[PriceItem]
-    fx_usd_cny: float | None = None
-    sources: list[Source] = []
-    data_quality: str = "partial"
-    data_quality_note: str | None = None
-
-
-class Briefing(BaseModel):
-    title: str
-    summary: str = Field(description="<=80 Chinese chars, one sentence")
-    body_markdown: str = Field(description="Sections: 价格面/供给面/厂商动态/关注点")
-    price_overview_markdown: str | None = None
-    supply_demand_points: list[str] = []
-    outlook_markdown: str | None = None
-    watch_items: list[str] = []
-    bullish_points: list[str] = []
-    bearish_points: list[str] = []
-    confidence: str = "medium"
-
-
-class NewsItem(BaseModel):
-    id: str
-    vendor: str
-    tags: list[str] = []
-    title: str
-    summary: str
-    url: str | None = None
-    source_name: str | None = None
-    published_date: str | None = None
-    impact: str = "other"
-    importance: str = "medium"
-
-
-class News(BaseModel):
-    items: list[NewsItem]
-
-
-class DailyReport(BaseModel):
-    price: PriceSnapshot
-    briefing: Briefing
-    news: News
-
-
-# === Fixed series IDs ===
-FIXED_IDS = """Fixed series IDs (use exactly these, never omit):
-Granules: ddr4_8gbit, ddr4_16gbit, ddr5_8gbit, ddr5_16gbit
-Modules: ddr4_udimm_16gb, ddr5_udimm_16gb, ddr5_rdimm_32gb, ddr5_rdimm_64gb
-Contract: ddr4_8gbit_contract, ddr5_8gbit_contract"""
-
-SYSTEM_PROMPT = f"""You are a DRAM/DDR market analyst for a hardware BOM engineer.
-You collect spot and contract price quotes, module prices, and manufacturer capacity/pricing news.
-
-Rules:
-- Prefer data published within the last 7 days; clearly mark older data.
-- Never invent numeric quotes. If you cannot find a quote, set price to null and explain in note / data_quality_note.
-- Normalize densities to IDs like ddr4_8gbit, ddr5_16gbit (use "gbit" not "gb").
-- Prices: number only, no currency symbols. Default currency USD.
-  If source is CNY, convert using the rate you find and record both in note.
-- change_dod_pct / change_wow_pct: compute only if you have both points; otherwise null.
-- All user-facing text (title, summary, body_markdown) in Simplified Chinese.
-- Vendors: Samsung / SK Hynix / Micron / CXMT / Nanya / Other.
-- Include source URLs for every numeric quote and every news item.
-
-{FIXED_IDS}"""
-
-RESEARCH_PROMPT = """Today's date (China time): {date}
-Previous trading day: {prev_date}
-Previous day's snapshot (JSON):
-{prev_snapshot}
-
-Search the web and produce detailed research notes covering:
-1. DDR4 & DDR5 spot prices (chip-level: 8Gb/16Gb) and module prices
-   (UDIMM 16GB, RDIMM 32GB/64GB) — USD preferred, note currency if not.
-2. Monthly/contract DRAM prices if reported (TrendForce, DRAMeXchange, etc.).
-3. Last 48h industry news: Samsung / SK Hynix / Micron capacity plans,
-   HBM (HBM3e/HBM4) crowding-out of conventional DRAM, pricing actions,
-   CXMT progress, any capex or utilization changes.
-4. Supply/demand signals: server vs mobile vs PC demand, inventory, order trends.
-
-For each fact, note the source URL and publication date.
-Output: structured markdown notes (no need for final JSON yet).
-Do not summarize away numbers — keep every quote you find."""
-
-EXTRACT_PROMPT = """Convert the research notes below into the DailyReport JSON matching the schema exactly.
-
-Date: {date}
-
-Notes:
-{notes}
-
-Additional rules for fields:
-- summary: <=80 Chinese characters, one sentence.
-- body_markdown: sections 价格面 / 供给面 / 厂商动态 / 关注点.
-- supply_demand_points: 2-5 short Chinese bullets.
-- bullish_points / bearish_points: each 0-4 bullets.
-- news.items: max 12, sorted by importance (high first).
-- confidence: "high" if multiple fresh sources for most quotes; "medium" if partial; "low" if mostly inferred.
-- Fill ALL fixed series IDs. Use price_usd=null if not found.
-
-{fixed_ids}"""
+CATEGORY_MAP = {
+    "ddr4": "DDR4", "ddr5": "DDR5",
+}
 
 
 def get_target_date() -> str:
-    """Get target date in China timezone, or use --date override."""
     parser = argparse.ArgumentParser()
     parser.add_argument("--date", help="Override date (YYYY-MM-DD, China time)")
     args = parser.parse_args()
-
-    if args.date:
-        return args.date
-    return datetime.now(CN_TZ).strftime("%Y-%m-%d")
+    return args.date or datetime.now(CN_TZ).strftime("%Y-%m-%d")
 
 
-def get_prev_date(date_str: str) -> str:
-    d = datetime.strptime(date_str, "%Y-%m-%d")
-    prev = d - timedelta(days=1)
-    return prev.strftime("%Y-%m-%d")
+def fetch_page(url: str, timeout: int = 15) -> str | None:
+    try:
+        resp = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=timeout)
+        resp.raise_for_status()
+        return resp.text
+    except Exception as e:
+        print(f"  [warn] Failed to fetch {url}: {e}")
+        return None
 
 
-def load_prev_snapshot(prev_date: str) -> str:
-    pf = DATA_DIR / "prices" / f"{prev_date}.json"
-    if pf.exists():
-        with open(pf, encoding="utf-8") as f:
-            return f.read()
-    return "(no previous data)"
+def scrape_trendforce_news() -> list[dict]:
+    """Scrape TrendForce press center for DDR/DRAM news."""
+    items = []
+    html = fetch_page("https://www.trendforce.com/presscenter/news/")
+    if not html:
+        return items
 
-
-def call_with_retries(client, messages_fn):
-    """Call Claude with retry on 429/529."""
-    for attempt in range(MAX_RETRIES):
-        try:
-            return messages_fn()
-        except (anthropic.RateLimitError, anthropic.APIStatusError) as e:
-            if attempt < MAX_RETRIES - 1:
-                wait = (2 ** attempt) * 5
-                print(f"  Retry {attempt + 1}/{MAX_RETRIES} after {wait}s: {e}")
-                time.sleep(wait)
-            else:
-                raise
-
-
-def phase_a_research(client, date: str, prev_date: str, prev_snapshot: str) -> str:
-    """Phase A: web search + research notes."""
-    prompt = RESEARCH_PROMPT.format(
-        date=date, prev_date=prev_date, prev_snapshot=prev_snapshot
-    )
-
-    messages = [{"role": "user", "content": prompt}]
-    pause_count = 0
-
-    while pause_count <= MAX_PAUSE_TURNS:
-        response = call_with_retries(
-            client,
-            lambda: client.messages.create(
-                model=MODEL,
-                max_tokens=16000,
-                system=SYSTEM_PROMPT,
-                tools=[
-                    {"type": "web_search_20260209", "name": "web_search"},
-                    {"type": "web_fetch_20260209", "name": "web_fetch"},
-                ],
-                messages=messages,
-            ),
-        )
-
-        if response.stop_reason == "pause_turn":
-            # Append assistant content and continue
-            messages.append({"role": "assistant", "content": response.content})
-            pause_count += 1
-            print(f"  Phase A: pause_turn ({pause_count}/{MAX_PAUSE_TURNS}), continuing...")
+    soup = BeautifulSoup(html, "html.parser")
+    # Find article links
+    for a in soup.find_all("a", href=True):
+        href = a.get("href", "")
+        title = a.get_text(strip=True)
+        if not title or len(title) < 10:
             continue
+        # Filter DDR/DRAM related
+        keywords = ["DDR", "DRAM", "memory", "HBM", "Samsung", "SK Hynix", "Micron", "Nanya", "内存"]
+        if any(kw.lower() in title.lower() for kw in keywords):
+            url = href if href.startswith("http") else f"https://www.trendforce.com{href}"
+            items.append({
+                "title": title,
+                "url": url,
+                "source": "TrendForce",
+            })
 
-        break
-
-    notes = "".join(
-        b.text for b in response.content if b.type == "text"
-    )
-    return notes
-
-
-def phase_b_extract(client, date: str, notes: str) -> DailyReport:
-    """Phase B: structured extraction."""
-    prompt = EXTRACT_PROMPT.format(
-        date=date,
-        notes=notes,
-        fixed_ids=FIXED_IDS,
-    )
-
-    response = call_with_retries(
-        client,
-        lambda: client.messages.create(
-            model=MODEL,
-            max_tokens=16000,
-            system=SYSTEM_PROMPT,
-            messages=[{"role": "user", "content": prompt}],
-            output_format={
-                "type": "json_schema",
-                "schema": DailyReport.model_json_schema(),
-            },
-        ),
-    )
-
-    # Parse the structured output
-    text = "".join(b.text for b in response.content if b.type == "text")
-    data = json.loads(text)
-    return DailyReport(**data)
+    return items[:10]
 
 
-def ensure_fixed_ids(items: list[PriceItem], required_ids: set[str]) -> list[PriceItem]:
-    """Null-pad missing fixed IDs so charts have continuous series."""
-    existing = {item.id for item in items}
-    for rid in required_ids - existing:
-        category = "DDR4" if "ddr4" in rid else "DDR5"
-        items.append(
-            PriceItem(
-                id=rid,
-                category=category,
-                price_usd=None,
-                confidence="low",
-                note="not found today",
-            )
-        )
+def scrape_chinaflashmarket() -> list[dict]:
+    """Try ChinaFlashMarket for spot price data."""
+    items = []
+    html = fetch_page("https://www.chinaflashmarket.com/")
+    if not html:
+        return items
+
+    soup = BeautifulSoup(html, "html.parser")
+    text = soup.get_text()
+    # Look for DDR price patterns
+    for line in text.split("\n"):
+        line = line.strip()
+        if any(kw in line.upper() for kw in ["DDR4", "DDR5"]) and any(c.isdigit() for c in line):
+            items.append({"text": line, "source": "ChinaFlashMarket"})
+
+    return items[:10]
+
+
+def extract_prices_from_text(text: str) -> dict:
+    """Try to extract price numbers from text."""
+    prices = {}
+    # Pattern: DDR4/DDR5 + number
+    patterns = [
+        (r'DDR4\s*8Gb[^\d]*?(\d+\.?\d*)', 'ddr4_8gbit'),
+        (r'DDR4\s*16Gb[^\d]*?(\d+\.?\d*)', 'ddr4_16gbit'),
+        (r'DDR5\s*8Gb[^\d]*?(\d+\.?\d*)', 'ddr5_8gbit'),
+        (r'DDR5\s*16Gb[^\d]*?(\d+\.?\d*)', 'ddr5_16gbit'),
+        (r'DDR4.*?UDIMM.*?16GB[^\d]*?(\d+\.?\d*)', 'ddr4_udimm_16gb'),
+        (r'DDR5.*?RDIMM.*?32GB[^\d]*?(\d+\.?\d*)', 'ddr5_rdimm_32gb'),
+    ]
+    for pat, sid in patterns:
+        m = re.search(pat, text, re.IGNORECASE)
+        if m:
+            prices[sid] = float(m.group(1))
+    return prices
+
+
+def make_price_item(id: str, price: float | None = None, **kw) -> dict:
+    cat = "DDR4" if "ddr4" in id else "DDR5"
+    density = kw.get("density", "")
+    form = kw.get("form", "")
+    capacity = kw.get("capacity", "")
+    return {
+        "id": id,
+        "category": cat,
+        "density": density or None,
+        "spec": kw.get("spec"),
+        "form": form or None,
+        "capacity": capacity or None,
+        "price_usd": price,
+        "change_dod_pct": kw.get("change_dod_pct"),
+        "change_wow_pct": kw.get("change_wow_pct"),
+        "currency": "USD",
+        "unit": kw.get("unit", "per chip"),
+        "period": kw.get("period"),
+        "confidence": kw.get("confidence", "low" if price is None else "medium"),
+        "note": kw.get("note"),
+    }
+
+
+def build_price_snapshot(news_items: list[dict], date: str) -> dict:
+    """Build price snapshot from scraped data."""
+    # Combine all text for price extraction
+    all_text = " ".join(item.get("title", "") + " " + item.get("text", "") for item in news_items)
+    found_prices = extract_prices_from_text(all_text)
+
+    granules = [
+        make_price_item("ddr4_8gbit", found_prices.get("ddr4_8gbit"), density="8Gb", spec="3200"),
+        make_price_item("ddr4_16gbit", found_prices.get("ddr4_16gbit"), density="16Gb", spec="3200"),
+        make_price_item("ddr5_8gbit", found_prices.get("ddr5_8gbit"), density="8Gb", spec="4800-5600"),
+        make_price_item("ddr5_16gbit", found_prices.get("ddr5_16gbit"), density="16Gb", spec="4800-6400"),
+    ]
+    modules = [
+        make_price_item("ddr4_udimm_16gb", found_prices.get("ddr4_udimm_16gb"),
+                        form="UDIMM", capacity="16GB", spec="3200", unit="per module"),
+        make_price_item("ddr5_udimm_16gb", found_prices.get("ddr5_udimm_16gb"),
+                        form="UDIMM", capacity="16GB", spec="4800/5600", unit="per module"),
+        make_price_item("ddr5_rdimm_32gb", found_prices.get("ddr5_rdimm_32gb"),
+                        form="RDIMM", capacity="32GB", spec="4800/5600", unit="per module"),
+        make_price_item("ddr5_rdimm_64gb", None,
+                        form="RDIMM", capacity="64GB", spec="4800/5600", unit="per module"),
+    ]
+    contract = [
+        make_price_item("ddr4_8gbit_contract", None, density="8Gb", period=f"{date[:7]} monthly", unit="per chip"),
+        make_price_item("ddr5_8gbit_contract", None, density="8Gb", period=f"{date[:7]} monthly", unit="per chip"),
+    ]
+
+    has_any_price = any(p["price_usd"] is not None for p in granules + modules)
+    return {
+        "schema_version": 1,
+        "date": date,
+        "generated_at": datetime.now(ZoneInfo("UTC")).isoformat().replace("+00:00", "Z"),
+        "currency_note": "USD unless currency field says otherwise",
+        "granules": granules,
+        "modules": modules,
+        "contract": contract,
+        "fx": {"usd_cny": None},
+        "sources": [{"name": item.get("source", ""), "url": item.get("url", ""), "retrieved_at": date}
+                     for item in news_items[:5] if item.get("url")],
+        "data_quality": "partial" if has_any_price else "low",
+        "data_quality_note": None if has_any_price else "今日未能从公开源抓取到确切价格",
+    }
+
+
+def build_news_items(news_items: list[dict], date: str) -> list[dict]:
+    """Convert scraped news to our schema."""
+    items = []
+    for i, item in enumerate(news_items[:12]):
+        title = item.get("title", item.get("text", ""))
+        if not title or len(title) < 5:
+            continue
+        # Detect vendor
+        vendor = "Other"
+        for v in ["Samsung", "SK Hynix", "Micron", "CXMT", "Nanya"]:
+            if v.lower() in title.lower():
+                vendor = v
+                break
+        items.append({
+            "id": f"{date}-news-{i}",
+            "vendor": vendor,
+            "tags": [],
+            "title": title[:200],
+            "summary": item.get("text", item.get("title", ""))[:500],
+            "url": item.get("url"),
+            "source_name": item.get("source", ""),
+            "published_date": date,
+            "impact": "other",
+            "importance": "medium" if i < 3 else "low",
+        })
     return items
 
 
-def write_artifacts(report: DailyReport, date: str):
-    now = datetime.now(ZoneInfo("UTC")).isoformat()
-    generated_at = now.replace("+00:00", "Z")
+def build_briefing(price_data: dict, news_items: list[dict], date: str) -> dict:
+    """Build a simple briefing from scraped data."""
+    # Count prices found
+    found = sum(1 for p in price_data["granules"] + price_data["modules"] if p["price_usd"] is not None)
+    total = len(price_data["granules"]) + len(price_data["modules"])
 
-    granule_ids = {"ddr4_8gbit", "ddr4_16gbit", "ddr5_8gbit", "ddr5_16gbit"}
-    module_ids = {"ddr4_udimm_16gb", "ddr5_udimm_16gb", "ddr5_rdimm_32gb", "ddr5_rdimm_64gb"}
-    contract_ids = {"ddr4_8gbit_contract", "ddr5_8gbit_contract"}
+    news_titles = [item.get("title", "") for item in news_items[:5]]
+    news_section = "\n".join(f"- {t}" for t in news_titles) if news_titles else "- 暂无相关新闻"
 
-    report.price.granules = ensure_fixed_ids(report.price.granules, granule_ids)
-    report.price.modules = ensure_fixed_ids(report.price.modules, module_ids)
-    report.price.contract = ensure_fixed_ids(report.price.contract, contract_ids)
+    body = f"""## 价格面
 
-    # Price snapshot
-    price_data = {
+今日从公开渠道采集到 {found}/{total} 个规格的价格数据。{price_data.get('data_quality_note') or ''}
+
+## 供给面
+
+暂无自动分析（爬虫版仅采集原始数据）。
+
+## 厂商动态
+
+{news_section}
+
+## 关注点
+
+- 价格数据来源于公开渠道，可能存在延迟
+- 建议交叉验证 TrendForce、DRAMeXchange 等专业渠道报价"""
+
+    return {
         "schema_version": 1,
         "date": date,
-        "generated_at": generated_at,
-        "currency_note": "USD unless currency field says otherwise",
-        "granules": [item.model_dump() for item in report.price.granules],
-        "modules": [item.model_dump() for item in report.price.modules],
-        "contract": [item.model_dump() for item in report.price.contract],
-        "fx": {"usd_cny": report.price.fx_usd_cny},
-        "sources": [s.model_dump() for s in report.price.sources],
-        "data_quality": report.price.data_quality,
-        "data_quality_note": report.price.data_quality_note,
+        "title": f"DDR早报 {date}",
+        "summary": f"爬虫版早报：采集到 {found}/{total} 个价格点，{len(news_items)} 条行业动态。",
+        "body_markdown": body,
+        "price_overview_markdown": f"今日采集价格 {found}/{total} 个规格。",
+        "supply_demand_points": ["爬虫版暂不提供供需分析"],
+        "outlook_markdown": None,
+        "watch_items": [item.get("title", "")[:50] for item in news_items[:3]],
+        "bullish_points": [],
+        "bearish_points": [],
+        "confidence": "low",
+        "generated_at": datetime.now(ZoneInfo("UTC")).isoformat().replace("+00:00", "Z"),
     }
 
-    # Briefing
-    briefing_data = {
-        "schema_version": 1,
-        "date": date,
-        "title": report.briefing.title,
-        "summary": report.briefing.summary,
-        "body_markdown": report.briefing.body_markdown,
-        "price_overview_markdown": report.briefing.price_overview_markdown,
-        "supply_demand_points": report.briefing.supply_demand_points,
-        "outlook_markdown": report.briefing.outlook_markdown,
-        "watch_items": report.briefing.watch_items,
-        "bullish_points": report.briefing.bullish_points,
-        "bearish_points": report.briefing.bearish_points,
-        "confidence": report.briefing.confidence,
-        "generated_at": generated_at,
-    }
 
-    # News
-    news_data = {
-        "schema_version": 1,
-        "date": date,
-        "items": [item.model_dump() for item in report.news.items],
-    }
-
-    # Write files
-    def write(path, data):
-        path.parent.mkdir(parents=True, exist_ok=True)
-        with open(path, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-        print(f"  Written: {path.relative_to(DATA_DIR.parent)}")
-
-    write(DATA_DIR / "prices" / f"{date}.json", price_data)
-    write(DATA_DIR / "briefings" / f"{date}.json", briefing_data)
-    write(DATA_DIR / "news" / f"{date}.json", news_data)
+def write_json(path: Path, data: dict):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+    print(f"  Written: {path.relative_to(DATA_DIR.parent)}")
 
 
 def main():
     date = get_target_date()
-    prev_date = get_prev_date(date)
+    print(f"DDR Daily Update (scraper) — {date}")
 
-    print(f"DDR Daily Update — {date} (prev: {prev_date})")
+    # Scrape news
+    print("Scraping TrendForce...")
+    news = scrape_trendforce_news()
+    print(f"  Found {len(news)} items")
 
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
-    if not api_key:
-        print("ERROR: ANTHROPIC_API_KEY environment variable not set")
-        sys.exit(1)
+    print("Scraping ChinaFlashMarket...")
+    cf_news = scrape_chinaflashmarket()
+    news.extend(cf_news)
+    print(f"  Found {len(cf_news)} price lines")
 
-    client = anthropic.Anthropic(api_key=api_key)
+    if not news:
+        print("  [warn] No news found, generating empty artifacts")
 
-    # Load previous snapshot for context
-    prev_snapshot = load_prev_snapshot(prev_date)
+    # Build artifacts
+    price_data = build_price_snapshot(news, date)
+    news_data = {"schema_version": 1, "date": date, "items": build_news_items(news, date)}
+    briefing_data = build_briefing(price_data, news, date)
 
-    # Phase A: Research
-    print("Phase A: web research...")
-    notes = phase_a_research(client, date, prev_date, prev_snapshot)
-    print(f"  Research notes: {len(notes)} chars")
+    # Write
+    write_json(DATA_DIR / "prices" / f"{date}.json", price_data)
+    write_json(DATA_DIR / "briefings" / f"{date}.json", briefing_data)
+    write_json(DATA_DIR / "news" / f"{date}.json", news_data)
 
-    if not notes.strip():
-        print("ERROR: Phase A returned empty notes")
-        sys.exit(1)
-
-    # Phase B: Structured extraction
-    print("Phase B: structured extraction...")
-    report = phase_b_extract(client, date, notes)
-    print(f"  Granules: {len(report.price.granules)}, Modules: {len(report.price.modules)}, News: {len(report.news.items)}")
-
-    # Write artifacts
-    write_artifacts(report, date)
-
-    print(f"Done. Next: run aggregate.py and validate.py")
+    print("Done. Next: run aggregate.py and validate.py")
 
 
 if __name__ == "__main__":
