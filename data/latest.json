@@ -1,9 +1,9 @@
 {
-  "date": "2026-09-30",
+  "date": "2026-10-01",
   "price": {
     "schema_version": 1,
-    "date": "2026-09-30",
-    "generated_at": "2026-09-30T06:52:26.848770Z",
+    "date": "2026-10-01",
+    "generated_at": "2026-10-01T07:16:20.183348Z",
     "currency_note": "USD unless currency field says otherwise",
     "granules": [
       {
@@ -150,7 +150,7 @@
         "change_wow_pct": null,
         "currency": "USD",
         "unit": "per chip",
-        "period": "2026-09 monthly",
+        "period": "2026-10 monthly",
         "confidence": "low",
         "note": null
       },
@@ -166,7 +166,7 @@
         "change_wow_pct": null,
         "currency": "USD",
         "unit": "per chip",
-        "period": "2026-09 monthly",
+        "period": "2026-10 monthly",
         "confidence": "low",
         "note": null
       }
@@ -177,18 +177,18 @@
     "sources": [
       {
         "name": "TrendForce",
+        "url": "https://www.trendforce.com/presscenter/news/20260930-13258.html",
+        "retrieved_at": "2026-10-01"
+      },
+      {
+        "name": "TrendForce",
         "url": "https://www.trendforce.com/presscenter/news/20260929-13255.html",
-        "retrieved_at": "2026-09-30"
+        "retrieved_at": "2026-10-01"
       },
       {
         "name": "TrendForce",
         "url": "https://www.trendforce.com/presscenter/news/20260922-13249.html",
-        "retrieved_at": "2026-09-30"
-      },
-      {
-        "name": "TrendForce",
-        "url": "https://www.trendforce.com/presscenter/news/20260921-13246.html",
-        "retrieved_at": "2026-09-30"
+        "retrieved_at": "2026-10-01"
       }
     ],
     "data_quality": "partial",
@@ -196,170 +196,170 @@
   },
   "briefing": {
     "schema_version": 1,
-    "date": "2026-09-30",
-    "title": "DDR早报 2026-09-30",
+    "date": "2026-10-01",
+    "title": "DDR早报 2026-10-01",
     "summary": "爬虫版早报：采集到 1/8 个价格点，13 条行业动态。",
-    "body_markdown": "## 价格面\n\n今日从公开渠道采集到 1/8 个规格的价格数据。\n\n## 供给面\n\n暂无自动分析（爬虫版仅采集原始数据）。\n\n## 厂商动态\n\n- HBM Supply Constraints Persist, 2027 Price Outlook Revised Upward with Blended ASP Forecast to Rise 121% YoY, Says TrendForce\n- DRAM Module Revenue Surges 59% YoY in 2025 as Crowding-Out Effect Constrains Chip Supply and Drives Prices Higher, Says TrendForce\n- Stronger North American Demand to Keep Enterprise SSD Prices on an Upward Trend in 4Q26, Says TrendForce\n- \n- \n\n## 关注点\n\n- 价格数据来源于公开渠道，可能存在延迟\n- 建议交叉验证 TrendForce、DRAMeXchange 等专业渠道报价",
+    "body_markdown": "## 价格面\n\n今日从公开渠道采集到 1/8 个规格的价格数据。\n\n## 供给面\n\n暂无自动分析（爬虫版仅采集原始数据）。\n\n## 厂商动态\n\n- AI Server Demand Sustains Memory Contract Price Increases in 4Q26, While Consumer-Side Pressure Persists, Says TrendForce\n- HBM Supply Constraints Persist, 2027 Price Outlook Revised Upward with Blended ASP Forecast to Rise 121% YoY, Says TrendForce\n- DRAM Module Revenue Surges 59% YoY in 2025 as Crowding-Out Effect Constrains Chip Supply and Drives Prices Higher, Says TrendForce\n- \n- \n\n## 关注点\n\n- 价格数据来源于公开渠道，可能存在延迟\n- 建议交叉验证 TrendForce、DRAMeXchange 等专业渠道报价",
     "price_overview_markdown": "今日采集价格 1/8 个规格。",
     "supply_demand_points": [
       "爬虫版暂不提供供需分析"
     ],
     "outlook_markdown": null,
     "watch_items": [
+      "AI Server Demand Sustains Memory Contract Price In",
       "HBM Supply Constraints Persist, 2027 Price Outlook",
-      "DRAM Module Revenue Surges 59% YoY in 2025 as Crow",
-      "Stronger North American Demand to Keep Enterprise "
+      "DRAM Module Revenue Surges 59% YoY in 2025 as Crow"
     ],
     "bullish_points": [],
     "bearish_points": [],
     "confidence": "low",
-    "generated_at": "2026-09-30T06:52:26.848825Z"
+    "generated_at": "2026-10-01T07:16:20.183409Z"
   },
   "news": {
     "schema_version": 1,
-    "date": "2026-09-30",
+    "date": "2026-10-01",
     "items": [
       {
-        "id": "2026-09-30-news-0",
+        "id": "2026-10-01-news-0",
+        "vendor": "Other",
+        "tags": [],
+        "title": "AI Server Demand Sustains Memory Contract Price Increases in 4Q26, While Consumer-Side Pressure Persists, Says TrendForce",
+        "summary": "AI Server Demand Sustains Memory Contract Price Increases in 4Q26, While Consumer-Side Pressure Persists, Says TrendForce",
+        "url": "https://www.trendforce.com/presscenter/news/20260930-13258.html",
+        "source_name": "TrendForce",
+        "published_date": "2026-10-01",
+        "impact": "other",
+        "importance": "medium"
+      },
+      {
+        "id": "2026-10-01-news-1",
         "vendor": "Other",
         "tags": [],
         "title": "HBM Supply Constraints Persist, 2027 Price Outlook Revised Upward with Blended ASP Forecast to Rise 121% YoY, Says TrendForce",
         "summary": "HBM Supply Constraints Persist, 2027 Price Outlook Revised Upward with Blended ASP Forecast to Rise 121% YoY, Says TrendForce",
         "url": "https://www.trendforce.com/presscenter/news/20260929-13255.html",
         "source_name": "TrendForce",
-        "published_date": "2026-09-30",
+        "published_date": "2026-10-01",
         "impact": "other",
         "importance": "medium"
       },
       {
-        "id": "2026-09-30-news-1",
+        "id": "2026-10-01-news-2",
         "vendor": "Other",
         "tags": [],
         "title": "DRAM Module Revenue Surges 59% YoY in 2025 as Crowding-Out Effect Constrains Chip Supply and Drives Prices Higher, Says TrendForce",
         "summary": "DRAM Module Revenue Surges 59% YoY in 2025 as Crowding-Out Effect Constrains Chip Supply and Drives Prices Higher, Says TrendForce",
         "url": "https://www.trendforce.com/presscenter/news/20260922-13249.html",
         "source_name": "TrendForce",
-        "published_date": "2026-09-30",
+        "published_date": "2026-10-01",
         "impact": "other",
         "importance": "medium"
       },
       {
-        "id": "2026-09-30-news-2",
-        "vendor": "Other",
-        "tags": [],
-        "title": "Stronger North American Demand to Keep Enterprise SSD Prices on an Upward Trend in 4Q26, Says TrendForce",
-        "summary": "Stronger North American Demand to Keep Enterprise SSD Prices on an Upward Trend in 4Q26, Says TrendForce",
-        "url": "https://www.trendforce.com/presscenter/news/20260921-13246.html",
-        "source_name": "TrendForce",
-        "published_date": "2026-09-30",
-        "impact": "other",
-        "importance": "medium"
-      },
-      {
-        "id": "2026-09-30-news-3",
+        "id": "2026-10-01-news-3",
         "vendor": "Other",
         "tags": [],
         "title": "DDR4 16Gb 3200",
         "summary": "DDR4 16Gb 3200",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-09-30",
+        "published_date": "2026-10-01",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-09-30-news-4",
+        "id": "2026-10-01-news-4",
         "vendor": "Other",
         "tags": [],
         "title": "DDR4 8Gb 3200",
         "summary": "DDR4 8Gb 3200",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-09-30",
+        "published_date": "2026-10-01",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-09-30-news-5",
+        "id": "2026-10-01-news-5",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 24Gb Major",
         "summary": "DDR5 24Gb Major",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-09-30",
+        "published_date": "2026-10-01",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-09-30-news-6",
+        "id": "2026-10-01-news-6",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 16Gb Major",
         "summary": "DDR5 16Gb Major",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-09-30",
+        "published_date": "2026-10-01",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-09-30-news-7",
+        "id": "2026-10-01-news-7",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 16Gb eTT",
         "summary": "DDR5 16Gb eTT",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-09-30",
+        "published_date": "2026-10-01",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-09-30-news-8",
+        "id": "2026-10-01-news-8",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 RDIMM 32GB",
         "summary": "DDR5 RDIMM 32GB",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-09-30",
+        "published_date": "2026-10-01",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-09-30-news-9",
+        "id": "2026-10-01-news-9",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 RDIMM 64GB",
         "summary": "DDR5 RDIMM 64GB",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-09-30",
+        "published_date": "2026-10-01",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-09-30-news-10",
+        "id": "2026-10-01-news-10",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 RDIMM 96GB",
         "summary": "DDR5 RDIMM 96GB",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-09-30",
+        "published_date": "2026-10-01",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-09-30-news-11",
+        "id": "2026-10-01-news-11",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 UDIMM 8GB 5600",
         "summary": "DDR5 UDIMM 8GB 5600",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-09-30",
+        "published_date": "2026-10-01",
         "impact": "other",
         "importance": "low"
       }
