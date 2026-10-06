@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-06",
+  "generated_at": "2026-10-06T07:39:24.950752Z",
+  "currency_note": "USD unless currency field says otherwise",
+  "granules": [
+    {
+      "id": "ddr4_8gbit",
+      "category": "DDR4",
+      "density": "8Gb",
+      "spec": "3200",
+      "form": null,
+      "capacity": null,
+      "price_usd": null,
+      "change_dod_pct": null,
+      "change_wow_pct": null,
+      "currency": "USD",
+      "unit": "per chip",
+      "period": null,
+      "confidence": "low",
+      "note": null
+    },
+    {
+      "id": "ddr4_16gbit",
+      "category": "DDR4",
+      "density": "16Gb",
+      "spec": "3200",
+      "form": null,
+      "capacity": null,
+      "price_usd": null,
+      "change_dod_pct": null,
+      "change_wow_pct": null,
+      "currency": "USD",
+      "unit": "per chip",
+      "period": null,
+      "confidence": "low",
+      "note": null
+    },
+    {
+      "id": "ddr5_8gbit",
+      "category": "DDR5",
+      "density": "8Gb",
+      "spec": "4800-5600",
+      "form": null,
+      "capacity": null,
+      "price_usd": null,
+      "change_dod_pct": null,
+      "change_wow_pct": null,
+      "currency": "USD",
+      "unit": "per chip",
+      "period": null,
+      "confidence": "low",
+      "note": null
+    },
+    {
+      "id": "ddr5_16gbit",
+      "category": "DDR5",
+      "density": "16Gb",
+      "spec": "4800-6400",
+      "form": null,
+      "capacity": null,
+      "price_usd": 5.0,
+      "change_dod_pct": null,
+      "change_wow_pct": null,
+      "currency": "USD",
+      "unit": "per chip",
+      "period": null,
+      "confidence": "medium",
+      "note": null
+    }
+  ],
+  "modules": [
+    {
+      "id": "ddr4_udimm_16gb",
+      "category": "DDR4",
+      "density": null,
+      "spec": "3200",
+      "form": "UDIMM",
+      "capacity": "16GB",
+      "price_usd": null,
+      "change_dod_pct": null,
+      "change_wow_pct": null,
+      "currency": "USD",
+      "unit": "per module",
+      "period": null,
+      "confidence": "low",
+      "note": null
+    },
+    {
+      "id": "ddr5_udimm_16gb",
+      "category": "DDR5",
+      "density": null,
+      "spec": "4800/5600",
+      "form": "UDIMM",
+      "capacity": "16GB",
+      "price_usd": null,
+      "change_dod_pct": null,
+      "change_wow_pct": null,
+      "currency": "USD",
+      "unit": "per module",
+      "period": null,
+      "confidence": "low",
+      "note": null
+    },
+    {
+      "id": "ddr5_rdimm_32gb",
+      "category": "DDR5",
+      "density": null,
+      "spec": "4800/5600",
+      "form": "RDIMM",
+      "capacity": "32GB",
+      "price_usd": null,
+      "change_dod_pct": null,
+      "change_wow_pct": null,
+      "currency": "USD",
+      "unit": "per module",
+      "period": null,
+      "confidence": "low",
+      "note": null
+    },
+    {
+      "id": "ddr5_rdimm_64gb",
+      "category": "DDR5",
+      "density": null,
+      "spec": "4800/5600",
+      "form": "RDIMM",
+      "capacity": "64GB",
+      "price_usd": null,
+      "change_dod_pct": null,
+      "change_wow_pct": null,
+      "currency": "USD",
+      "unit": "per module",
+      "period": null,
+      "confidence": "low",
+      "note": null
+    }
+  ],
+  "contract": [
+    {
+      "id": "ddr4_8gbit_contract",
+      "category": "DDR4",
+      "density": "8Gb",
+      "spec": null,
+      "form": null,
+      "capacity": null,
+      "price_usd": null,
+      "change_dod_pct": null,
+      "change_wow_pct": null,
+      "currency": "USD",
+      "unit": "per chip",
+      "period": "2026-10 monthly",
+      "confidence": "low",
+      "note": null
+    },
+    {
+      "id": "ddr5_8gbit_contract",
+      "category": "DDR5",
+      "density": "8Gb",
+      "spec": null,
+      "form": null,
+      "capacity": null,
+      "price_usd": null,
+      "change_dod_pct": null,
+      "change_wow_pct": null,
+      "currency": "USD",
+      "unit": "per chip",
+      "period": "2026-10 monthly",
+      "confidence": "low",
+      "note": null
+    }
+  ],
+  "fx": {
+    "usd_cny": null
+  },
+  "sources": [
+    {
+      "name": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20260930-13258.html",
+      "retrieved_at": "2026-10-06"
+    },
+    {
+      "name": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20260929-13255.html",
+      "retrieved_at": "2026-10-06"
+    },
+    {
+      "name": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20260922-13249.html",
+      "retrieved_at": "2026-10-06"
+    }
+  ],
+  "data_quality": "partial",
+  "data_quality_note": null
+}
