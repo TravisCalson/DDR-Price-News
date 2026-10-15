@@ -1,9 +1,9 @@
 {
-  "date": "2026-10-14",
+  "date": "2026-10-15",
   "price": {
     "schema_version": 1,
-    "date": "2026-10-14",
-    "generated_at": "2026-10-14T06:15:55.811935Z",
+    "date": "2026-10-15",
+    "generated_at": "2026-10-15T05:58:17.661848Z",
     "currency_note": "USD unless currency field says otherwise",
     "granules": [
       {
@@ -177,18 +177,18 @@
     "sources": [
       {
         "name": "TrendForce",
+        "url": "https://www.trendforce.com/presscenter/news/20261014-13269.html",
+        "retrieved_at": "2026-10-15"
+      },
+      {
+        "name": "TrendForce",
         "url": "https://www.trendforce.com/presscenter/news/20261008-13264.html",
-        "retrieved_at": "2026-10-14"
+        "retrieved_at": "2026-10-15"
       },
       {
         "name": "TrendForce",
         "url": "https://www.trendforce.com/presscenter/news/20260930-13258.html",
-        "retrieved_at": "2026-10-14"
-      },
-      {
-        "name": "TrendForce",
-        "url": "https://www.trendforce.com/presscenter/news/20260929-13255.html",
-        "retrieved_at": "2026-10-14"
+        "retrieved_at": "2026-10-15"
       }
     ],
     "data_quality": "partial",
@@ -196,170 +196,170 @@
   },
   "briefing": {
     "schema_version": 1,
-    "date": "2026-10-14",
-    "title": "DDR早报 2026-10-14",
+    "date": "2026-10-15",
+    "title": "DDR早报 2026-10-15",
     "summary": "爬虫版早报：采集到 1/8 个价格点，13 条行业动态。",
-    "body_markdown": "## 价格面\n\n今日从公开渠道采集到 1/8 个规格的价格数据。\n\n## 供给面\n\n暂无自动分析（爬虫版仅采集原始数据）。\n\n## 厂商动态\n\n- Rising Costs Threaten Notebook Demand in 2027, Raising Risks of Shipment Declines and Price Increases, Says TrendForce\n- AI Server Demand Sustains Memory Contract Price Increases in 4Q26, While Consumer-Side Pressure Persists, Says TrendForce\n- HBM Supply Constraints Persist, 2027 Price Outlook Revised Upward with Blended ASP Forecast to Rise 121% YoY, Says TrendForce\n- \n- \n\n## 关注点\n\n- 价格数据来源于公开渠道，可能存在延迟\n- 建议交叉验证 TrendForce、DRAMeXchange 等专业渠道报价",
+    "body_markdown": "## 价格面\n\n今日从公开渠道采集到 1/8 个规格的价格数据。\n\n## 供给面\n\n暂无自动分析（爬虫版仅采集原始数据）。\n\n## 厂商动态\n\n- CSP CapEx Projected to Exceed US$1.5 Trillion in 2027, with AI Server Revenue Growing Over 90% YoY on Higher Shipments and Prices, Says TrendForce\n- Rising Costs Threaten Notebook Demand in 2027, Raising Risks of Shipment Declines and Price Increases, Says TrendForce\n- AI Server Demand Sustains Memory Contract Price Increases in 4Q26, While Consumer-Side Pressure Persists, Says TrendForce\n- \n- \n\n## 关注点\n\n- 价格数据来源于公开渠道，可能存在延迟\n- 建议交叉验证 TrendForce、DRAMeXchange 等专业渠道报价",
     "price_overview_markdown": "今日采集价格 1/8 个规格。",
     "supply_demand_points": [
       "爬虫版暂不提供供需分析"
     ],
     "outlook_markdown": null,
     "watch_items": [
+      "CSP CapEx Projected to Exceed US$1.5 Trillion in 2",
       "Rising Costs Threaten Notebook Demand in 2027, Rai",
-      "AI Server Demand Sustains Memory Contract Price In",
-      "HBM Supply Constraints Persist, 2027 Price Outlook"
+      "AI Server Demand Sustains Memory Contract Price In"
     ],
     "bullish_points": [],
     "bearish_points": [],
     "confidence": "low",
-    "generated_at": "2026-10-14T06:15:55.811990Z"
+    "generated_at": "2026-10-15T05:58:17.661906Z"
   },
   "news": {
     "schema_version": 1,
-    "date": "2026-10-14",
+    "date": "2026-10-15",
     "items": [
       {
-        "id": "2026-10-14-news-0",
+        "id": "2026-10-15-news-0",
+        "vendor": "Other",
+        "tags": [],
+        "title": "CSP CapEx Projected to Exceed US$1.5 Trillion in 2027, with AI Server Revenue Growing Over 90% YoY on Higher Shipments and Prices, Says TrendForce",
+        "summary": "CSP CapEx Projected to Exceed US$1.5 Trillion in 2027, with AI Server Revenue Growing Over 90% YoY on Higher Shipments and Prices, Says TrendForce",
+        "url": "https://www.trendforce.com/presscenter/news/20261014-13269.html",
+        "source_name": "TrendForce",
+        "published_date": "2026-10-15",
+        "impact": "other",
+        "importance": "medium"
+      },
+      {
+        "id": "2026-10-15-news-1",
         "vendor": "Other",
         "tags": [],
         "title": "Rising Costs Threaten Notebook Demand in 2027, Raising Risks of Shipment Declines and Price Increases, Says TrendForce",
         "summary": "Rising Costs Threaten Notebook Demand in 2027, Raising Risks of Shipment Declines and Price Increases, Says TrendForce",
         "url": "https://www.trendforce.com/presscenter/news/20261008-13264.html",
         "source_name": "TrendForce",
-        "published_date": "2026-10-14",
+        "published_date": "2026-10-15",
         "impact": "other",
         "importance": "medium"
       },
       {
-        "id": "2026-10-14-news-1",
+        "id": "2026-10-15-news-2",
         "vendor": "Other",
         "tags": [],
         "title": "AI Server Demand Sustains Memory Contract Price Increases in 4Q26, While Consumer-Side Pressure Persists, Says TrendForce",
         "summary": "AI Server Demand Sustains Memory Contract Price Increases in 4Q26, While Consumer-Side Pressure Persists, Says TrendForce",
         "url": "https://www.trendforce.com/presscenter/news/20260930-13258.html",
         "source_name": "TrendForce",
-        "published_date": "2026-10-14",
+        "published_date": "2026-10-15",
         "impact": "other",
         "importance": "medium"
       },
       {
-        "id": "2026-10-14-news-2",
-        "vendor": "Other",
-        "tags": [],
-        "title": "HBM Supply Constraints Persist, 2027 Price Outlook Revised Upward with Blended ASP Forecast to Rise 121% YoY, Says TrendForce",
-        "summary": "HBM Supply Constraints Persist, 2027 Price Outlook Revised Upward with Blended ASP Forecast to Rise 121% YoY, Says TrendForce",
-        "url": "https://www.trendforce.com/presscenter/news/20260929-13255.html",
-        "source_name": "TrendForce",
-        "published_date": "2026-10-14",
-        "impact": "other",
-        "importance": "medium"
-      },
-      {
-        "id": "2026-10-14-news-3",
+        "id": "2026-10-15-news-3",
         "vendor": "Other",
         "tags": [],
         "title": "DDR4 16Gb 3200",
         "summary": "DDR4 16Gb 3200",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-10-14",
+        "published_date": "2026-10-15",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-10-14-news-4",
+        "id": "2026-10-15-news-4",
         "vendor": "Other",
         "tags": [],
         "title": "DDR4 8Gb 3200",
         "summary": "DDR4 8Gb 3200",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-10-14",
+        "published_date": "2026-10-15",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-10-14-news-5",
+        "id": "2026-10-15-news-5",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 24Gb Major",
         "summary": "DDR5 24Gb Major",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-10-14",
+        "published_date": "2026-10-15",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-10-14-news-6",
+        "id": "2026-10-15-news-6",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 16Gb Major",
         "summary": "DDR5 16Gb Major",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-10-14",
+        "published_date": "2026-10-15",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-10-14-news-7",
+        "id": "2026-10-15-news-7",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 16Gb eTT",
         "summary": "DDR5 16Gb eTT",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-10-14",
+        "published_date": "2026-10-15",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-10-14-news-8",
+        "id": "2026-10-15-news-8",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 RDIMM 32GB",
         "summary": "DDR5 RDIMM 32GB",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-10-14",
+        "published_date": "2026-10-15",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-10-14-news-9",
+        "id": "2026-10-15-news-9",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 RDIMM 64GB",
         "summary": "DDR5 RDIMM 64GB",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-10-14",
+        "published_date": "2026-10-15",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-10-14-news-10",
+        "id": "2026-10-15-news-10",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 RDIMM 96GB",
         "summary": "DDR5 RDIMM 96GB",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-10-14",
+        "published_date": "2026-10-15",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-10-14-news-11",
+        "id": "2026-10-15-news-11",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 UDIMM 8GB 5600",
         "summary": "DDR5 UDIMM 8GB 5600",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-10-14",
+        "published_date": "2026-10-15",
         "impact": "other",
         "importance": "low"
       }
