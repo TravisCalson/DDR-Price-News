@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-15T05:58:17.661848Z",
+  "updated": "2026-10-16T05:57:18.094160Z",
   "series_meta": {
     "ddr4_8gbit": {
       "label": "DDR4 8Gb",
@@ -122,6 +122,10 @@
       {
         "d": "2026-10-15",
         "p": null
+      },
+      {
+        "d": "2026-10-16",
+        "p": null
       }
     ],
     "ddr4_16gbit": [
@@ -191,6 +195,10 @@
       },
       {
         "d": "2026-10-15",
+        "p": null
+      },
+      {
+        "d": "2026-10-16",
         "p": null
       }
     ],
@@ -262,6 +270,10 @@
       {
         "d": "2026-10-15",
         "p": null
+      },
+      {
+        "d": "2026-10-16",
+        "p": null
       }
     ],
     "ddr5_16gbit": [
@@ -331,6 +343,10 @@
       },
       {
         "d": "2026-10-15",
+        "p": 5.0
+      },
+      {
+        "d": "2026-10-16",
         "p": 5.0
       }
     ],
@@ -402,6 +418,10 @@
       {
         "d": "2026-10-15",
         "p": null
+      },
+      {
+        "d": "2026-10-16",
+        "p": null
       }
     ],
     "ddr5_udimm_16gb": [
@@ -471,6 +491,10 @@
       },
       {
         "d": "2026-10-15",
+        "p": null
+      },
+      {
+        "d": "2026-10-16",
         "p": null
       }
     ],
@@ -542,6 +566,10 @@
       {
         "d": "2026-10-15",
         "p": null
+      },
+      {
+        "d": "2026-10-16",
+        "p": null
       }
     ],
     "ddr5_rdimm_64gb": [
@@ -611,6 +639,10 @@
       },
       {
         "d": "2026-10-15",
+        "p": null
+      },
+      {
+        "d": "2026-10-16",
         "p": null
       }
     ],
@@ -682,6 +714,10 @@
       {
         "d": "2026-10-15",
         "p": null
+      },
+      {
+        "d": "2026-10-16",
+        "p": null
       }
     ],
     "ddr5_8gbit_contract": [
@@ -752,10 +788,24 @@
       {
         "d": "2026-10-15",
         "p": null
+      },
+      {
+        "d": "2026-10-16",
+        "p": null
       }
     ]
   },
   "briefings_index": [
+    {
+      "date": "2026-10-16",
+      "title": "DDR早报 2026-10-16",
+      "summary": "爬虫版早报：采集到 1/8 个价格点，12 条行业动态。",
+      "watch_items": [
+        "CSP CapEx Projected to Exceed US$1.5 Trillion in 2",
+        "Rising Costs Threaten Notebook Demand in 2027, Rai",
+        ""
+      ]
+    },
     {
       "date": "2026-10-15",
       "title": "DDR早报 2026-10-15",
@@ -928,6 +978,90 @@
     }
   ],
   "news_index": [
+    {
+      "date": "2026-10-16",
+      "vendor": "Other",
+      "title": "CSP CapEx Projected to Exceed US$1.5 Trillion in 2027, with AI Server Revenue Growing Over 90% YoY on Higher Shipments and Prices, Says TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20261014-13269.html",
+      "importance": "medium"
+    },
+    {
+      "date": "2026-10-16",
+      "vendor": "Other",
+      "title": "Rising Costs Threaten Notebook Demand in 2027, Raising Risks of Shipment Declines and Price Increases, Says TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20261008-13264.html",
+      "importance": "medium"
+    },
+    {
+      "date": "2026-10-16",
+      "vendor": "Other",
+      "title": "DDR4 16Gb 3200",
+      "url": null,
+      "importance": "medium"
+    },
+    {
+      "date": "2026-10-16",
+      "vendor": "Other",
+      "title": "DDR4 8Gb 3200",
+      "url": null,
+      "importance": "low"
+    },
+    {
+      "date": "2026-10-16",
+      "vendor": "Other",
+      "title": "DDR5 24Gb Major",
+      "url": null,
+      "importance": "low"
+    },
+    {
+      "date": "2026-10-16",
+      "vendor": "Other",
+      "title": "DDR5 16Gb Major",
+      "url": null,
+      "importance": "low"
+    },
+    {
+      "date": "2026-10-16",
+      "vendor": "Other",
+      "title": "DDR5 16Gb eTT",
+      "url": null,
+      "importance": "low"
+    },
+    {
+      "date": "2026-10-16",
+      "vendor": "Other",
+      "title": "DDR5 RDIMM 32GB",
+      "url": null,
+      "importance": "low"
+    },
+    {
+      "date": "2026-10-16",
+      "vendor": "Other",
+      "title": "DDR5 RDIMM 64GB",
+      "url": null,
+      "importance": "low"
+    },
+    {
+      "date": "2026-10-16",
+      "vendor": "Other",
+      "title": "DDR5 RDIMM 96GB",
+      "url": null,
+      "importance": "low"
+    },
+    {
+      "date": "2026-10-16",
+      "vendor": "Other",
+      "title": "DDR5 UDIMM 8GB 5600",
+      "url": null,
+      "importance": "low"
+    },
+    {
+      "date": "2026-10-16",
+      "vendor": "Other",
+      "title": "DDR5 UDIMM 8GB 6000",
+      "url": null,
+      "importance": "low"
+    },
     {
       "date": "2026-10-15",
       "vendor": "Other",
