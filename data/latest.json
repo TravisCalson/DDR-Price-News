@@ -1,9 +1,9 @@
 {
-  "date": "2026-10-20",
+  "date": "2026-10-21",
   "price": {
     "schema_version": 1,
-    "date": "2026-10-20",
-    "generated_at": "2026-10-20T06:09:08.561002Z",
+    "date": "2026-10-21",
+    "generated_at": "2026-10-21T06:07:30.991725Z",
     "currency_note": "USD unless currency field says otherwise",
     "granules": [
       {
@@ -178,17 +178,17 @@
       {
         "name": "TrendForce",
         "url": "https://www.trendforce.com/presscenter/news/20261019-13275.html",
-        "retrieved_at": "2026-10-20"
+        "retrieved_at": "2026-10-21"
       },
       {
         "name": "TrendForce",
         "url": "https://www.trendforce.com/presscenter/news/20261014-13269.html",
-        "retrieved_at": "2026-10-20"
+        "retrieved_at": "2026-10-21"
       },
       {
         "name": "TrendForce",
         "url": "https://www.trendforce.com/presscenter/news/20261008-13264.html",
-        "retrieved_at": "2026-10-20"
+        "retrieved_at": "2026-10-21"
       }
     ],
     "data_quality": "partial",
@@ -196,8 +196,8 @@
   },
   "briefing": {
     "schema_version": 1,
-    "date": "2026-10-20",
-    "title": "DDR早报 2026-10-20",
+    "date": "2026-10-21",
+    "title": "DDR早报 2026-10-21",
     "summary": "爬虫版早报：采集到 1/8 个价格点，13 条行业动态。",
     "body_markdown": "## 价格面\n\n今日从公开渠道采集到 1/8 个规格的价格数据。\n\n## 供给面\n\n暂无自动分析（爬虫版仅采集原始数据）。\n\n## 厂商动态\n\n- Optical Fiber Spot Prices Surge Severalfold in 2026, with Data Center-Driven Supply Shortages Expected to Persist Through 2028, Says TrendForce\n- CSP CapEx Projected to Exceed US$1.5 Trillion in 2027, with AI Server Revenue Growing Over 90% YoY on Higher Shipments and Prices, Says TrendForce\n- Rising Costs Threaten Notebook Demand in 2027, Raising Risks of Shipment Declines and Price Increases, Says TrendForce\n- \n- \n\n## 关注点\n\n- 价格数据来源于公开渠道，可能存在延迟\n- 建议交叉验证 TrendForce、DRAMeXchange 等专业渠道报价",
     "price_overview_markdown": "今日采集价格 1/8 个规格。",
@@ -213,153 +213,153 @@
     "bullish_points": [],
     "bearish_points": [],
     "confidence": "low",
-    "generated_at": "2026-10-20T06:09:08.561063Z"
+    "generated_at": "2026-10-21T06:07:30.991795Z"
   },
   "news": {
     "schema_version": 1,
-    "date": "2026-10-20",
+    "date": "2026-10-21",
     "items": [
       {
-        "id": "2026-10-20-news-0",
+        "id": "2026-10-21-news-0",
         "vendor": "Other",
         "tags": [],
         "title": "Optical Fiber Spot Prices Surge Severalfold in 2026, with Data Center-Driven Supply Shortages Expected to Persist Through 2028, Says TrendForce",
         "summary": "Optical Fiber Spot Prices Surge Severalfold in 2026, with Data Center-Driven Supply Shortages Expected to Persist Through 2028, Says TrendForce",
         "url": "https://www.trendforce.com/presscenter/news/20261019-13275.html",
         "source_name": "TrendForce",
-        "published_date": "2026-10-20",
+        "published_date": "2026-10-21",
         "impact": "other",
         "importance": "medium"
       },
       {
-        "id": "2026-10-20-news-1",
+        "id": "2026-10-21-news-1",
         "vendor": "Other",
         "tags": [],
         "title": "CSP CapEx Projected to Exceed US$1.5 Trillion in 2027, with AI Server Revenue Growing Over 90% YoY on Higher Shipments and Prices, Says TrendForce",
         "summary": "CSP CapEx Projected to Exceed US$1.5 Trillion in 2027, with AI Server Revenue Growing Over 90% YoY on Higher Shipments and Prices, Says TrendForce",
         "url": "https://www.trendforce.com/presscenter/news/20261014-13269.html",
         "source_name": "TrendForce",
-        "published_date": "2026-10-20",
+        "published_date": "2026-10-21",
         "impact": "other",
         "importance": "medium"
       },
       {
-        "id": "2026-10-20-news-2",
+        "id": "2026-10-21-news-2",
         "vendor": "Other",
         "tags": [],
         "title": "Rising Costs Threaten Notebook Demand in 2027, Raising Risks of Shipment Declines and Price Increases, Says TrendForce",
         "summary": "Rising Costs Threaten Notebook Demand in 2027, Raising Risks of Shipment Declines and Price Increases, Says TrendForce",
         "url": "https://www.trendforce.com/presscenter/news/20261008-13264.html",
         "source_name": "TrendForce",
-        "published_date": "2026-10-20",
+        "published_date": "2026-10-21",
         "impact": "other",
         "importance": "medium"
       },
       {
-        "id": "2026-10-20-news-3",
+        "id": "2026-10-21-news-3",
+        "vendor": "Other",
+        "tags": [],
+        "title": "本周部分渠道DDR5内存条继续小涨，但近期个别资源价格出现松动涨价后劲存疑！",
+        "summary": "本周部分渠道DDR5内存条继续小涨，但近期个别资源价格出现松动涨价后劲存疑！",
+        "url": null,
+        "source_name": "ChinaFlashMarket",
+        "published_date": "2026-10-21",
+        "impact": "other",
+        "importance": "low"
+      },
+      {
+        "id": "2026-10-21-news-4",
         "vendor": "Other",
         "tags": [],
         "title": "DDR4 16Gb 3200",
         "summary": "DDR4 16Gb 3200",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-10-20",
+        "published_date": "2026-10-21",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-10-20-news-4",
+        "id": "2026-10-21-news-5",
         "vendor": "Other",
         "tags": [],
         "title": "DDR4 8Gb 3200",
         "summary": "DDR4 8Gb 3200",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-10-20",
+        "published_date": "2026-10-21",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-10-20-news-5",
+        "id": "2026-10-21-news-6",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 24Gb Major",
         "summary": "DDR5 24Gb Major",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-10-20",
+        "published_date": "2026-10-21",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-10-20-news-6",
+        "id": "2026-10-21-news-7",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 16Gb Major",
         "summary": "DDR5 16Gb Major",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-10-20",
+        "published_date": "2026-10-21",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-10-20-news-7",
+        "id": "2026-10-21-news-8",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 16Gb eTT",
         "summary": "DDR5 16Gb eTT",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-10-20",
+        "published_date": "2026-10-21",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-10-20-news-8",
+        "id": "2026-10-21-news-9",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 RDIMM 32GB",
         "summary": "DDR5 RDIMM 32GB",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-10-20",
+        "published_date": "2026-10-21",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-10-20-news-9",
+        "id": "2026-10-21-news-10",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 RDIMM 64GB",
         "summary": "DDR5 RDIMM 64GB",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-10-20",
+        "published_date": "2026-10-21",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-10-20-news-10",
+        "id": "2026-10-21-news-11",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 RDIMM 96GB",
         "summary": "DDR5 RDIMM 96GB",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-10-20",
-        "impact": "other",
-        "importance": "low"
-      },
-      {
-        "id": "2026-10-20-news-11",
-        "vendor": "Other",
-        "tags": [],
-        "title": "DDR5 UDIMM 8GB 5600",
-        "summary": "DDR5 UDIMM 8GB 5600",
-        "url": null,
-        "source_name": "ChinaFlashMarket",
-        "published_date": "2026-10-20",
+        "published_date": "2026-10-21",
         "impact": "other",
         "importance": "low"
       }
