@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-24",
+  "items": [
+    {
+      "id": "2026-10-24-news-0",
+      "vendor": "Other",
+      "tags": [],
+      "title": "Optical Fiber Spot Prices Surge Severalfold in 2026, with Data Center-Driven Supply Shortages Expected to Persist Through 2028, Says TrendForce",
+      "summary": "Optical Fiber Spot Prices Surge Severalfold in 2026, with Data Center-Driven Supply Shortages Expected to Persist Through 2028, Says TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20261019-13275.html",
+      "source_name": "TrendForce",
+      "published_date": "2026-10-24",
+      "impact": "other",
+      "importance": "medium"
+    },
+    {
+      "id": "2026-10-24-news-1",
+      "vendor": "Other",
+      "tags": [],
+      "title": "CSP CapEx Projected to Exceed US$1.5 Trillion in 2027, with AI Server Revenue Growing Over 90% YoY on Higher Shipments and Prices, Says TrendForce",
+      "summary": "CSP CapEx Projected to Exceed US$1.5 Trillion in 2027, with AI Server Revenue Growing Over 90% YoY on Higher Shipments and Prices, Says TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20261014-13269.html",
+      "source_name": "TrendForce",
+      "published_date": "2026-10-24",
+      "impact": "other",
+      "importance": "medium"
+    },
+    {
+      "id": "2026-10-24-news-2",
+      "vendor": "Other",
+      "tags": [],
+      "title": "本周部分渠道DDR5内存条继续小涨，但近期个别资源价格出现松动涨价后劲存疑！",
+      "summary": "本周部分渠道DDR5内存条继续小涨，但近期个别资源价格出现松动涨价后劲存疑！",
+      "url": null,
+      "source_name": "ChinaFlashMarket",
+      "published_date": "2026-10-24",
+      "impact": "other",
+      "importance": "medium"
+    },
+    {
+      "id": "2026-10-24-news-3",
+      "vendor": "Other",
+      "tags": [],
+      "title": "DDR4 16Gb 3200",
+      "summary": "DDR4 16Gb 3200",
+      "url": null,
+      "source_name": "ChinaFlashMarket",
+      "published_date": "2026-10-24",
+      "impact": "other",
+      "importance": "low"
+    },
+    {
+      "id": "2026-10-24-news-4",
+      "vendor": "Other",
+      "tags": [],
+      "title": "DDR4 8Gb 3200",
+      "summary": "DDR4 8Gb 3200",
+      "url": null,
+      "source_name": "ChinaFlashMarket",
+      "published_date": "2026-10-24",
+      "impact": "other",
+      "importance": "low"
+    },
+    {
+      "id": "2026-10-24-news-5",
+      "vendor": "Other",
+      "tags": [],
+      "title": "DDR5 24Gb Major",
+      "summary": "DDR5 24Gb Major",
+      "url": null,
+      "source_name": "ChinaFlashMarket",
+      "published_date": "2026-10-24",
+      "impact": "other",
+      "importance": "low"
+    },
+    {
+      "id": "2026-10-24-news-6",
+      "vendor": "Other",
+      "tags": [],
+      "title": "DDR5 16Gb Major",
+      "summary": "DDR5 16Gb Major",
+      "url": null,
+      "source_name": "ChinaFlashMarket",
+      "published_date": "2026-10-24",
+      "impact": "other",
+      "importance": "low"
+    },
+    {
+      "id": "2026-10-24-news-7",
+      "vendor": "Other",
+      "tags": [],
+      "title": "DDR5 16Gb eTT",
+      "summary": "DDR5 16Gb eTT",
+      "url": null,
+      "source_name": "ChinaFlashMarket",
+      "published_date": "2026-10-24",
+      "impact": "other",
+      "importance": "low"
+    },
+    {
+      "id": "2026-10-24-news-8",
+      "vendor": "Other",
+      "tags": [],
+      "title": "DDR5 RDIMM 32GB",
+      "summary": "DDR5 RDIMM 32GB",
+      "url": null,
+      "source_name": "ChinaFlashMarket",
+      "published_date": "2026-10-24",
+      "impact": "other",
+      "importance": "low"
+    },
+    {
+      "id": "2026-10-24-news-9",
+      "vendor": "Other",
+      "tags": [],
+      "title": "DDR5 RDIMM 64GB",
+      "summary": "DDR5 RDIMM 64GB",
+      "url": null,
+      "source_name": "ChinaFlashMarket",
+      "published_date": "2026-10-24",
+      "impact": "other",
+      "importance": "low"
+    },
+    {
+      "id": "2026-10-24-news-10",
+      "vendor": "Other",
+      "tags": [],
+      "title": "DDR5 RDIMM 96GB",
+      "summary": "DDR5 RDIMM 96GB",
+      "url": null,
+      "source_name": "ChinaFlashMarket",
+      "published_date": "2026-10-24",
+      "impact": "other",
+      "importance": "low"
+    },
+    {
+      "id": "2026-10-24-news-11",
+      "vendor": "Other",
+      "tags": [],
+      "title": "DDR5 UDIMM 8GB 5600",
+      "summary": "DDR5 UDIMM 8GB 5600",
+      "url": null,
+      "source_name": "ChinaFlashMarket",
+      "published_date": "2026-10-24",
+      "impact": "other",
+      "importance": "low"
+    }
+  ]
+}

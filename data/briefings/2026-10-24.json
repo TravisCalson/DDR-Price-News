@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-24",
+  "title": "DDR早报 2026-10-24",
+  "summary": "爬虫版早报：采集到 1/8 个价格点，12 条行业动态。",
+  "body_markdown": "## 价格面\n\n今日从公开渠道采集到 1/8 个规格的价格数据。\n\n## 供给面\n\n暂无自动分析（爬虫版仅采集原始数据）。\n\n## 厂商动态\n\n- Optical Fiber Spot Prices Surge Severalfold in 2026, with Data Center-Driven Supply Shortages Expected to Persist Through 2028, Says TrendForce\n- CSP CapEx Projected to Exceed US$1.5 Trillion in 2027, with AI Server Revenue Growing Over 90% YoY on Higher Shipments and Prices, Says TrendForce\n- \n- \n- \n\n## 关注点\n\n- 价格数据来源于公开渠道，可能存在延迟\n- 建议交叉验证 TrendForce、DRAMeXchange 等专业渠道报价",
+  "price_overview_markdown": "今日采集价格 1/8 个规格。",
+  "supply_demand_points": [
+    "爬虫版暂不提供供需分析"
+  ],
+  "outlook_markdown": null,
+  "watch_items": [
+    "Optical Fiber Spot Prices Surge Severalfold in 202",
+    "CSP CapEx Projected to Exceed US$1.5 Trillion in 2",
+    ""
+  ],
+  "bullish_points": [],
+  "bearish_points": [],
+  "confidence": "low",
+  "generated_at": "2026-10-24T06:01:40.649212Z"
+}
