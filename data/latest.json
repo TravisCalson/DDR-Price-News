@@ -1,9 +1,9 @@
 {
-  "date": "2026-11-10",
+  "date": "2026-11-11",
   "price": {
     "schema_version": 1,
-    "date": "2026-11-10",
-    "generated_at": "2026-11-10T08:29:54.777923Z",
+    "date": "2026-11-11",
+    "generated_at": "2026-11-11T07:50:54.426597Z",
     "currency_note": "USD unless currency field says otherwise",
     "granules": [
       {
@@ -177,8 +177,13 @@
     "sources": [
       {
         "name": "TrendForce",
+        "url": "https://www.trendforce.com/presscenter/news/20261111-13303.html",
+        "retrieved_at": "2026-11-11"
+      },
+      {
+        "name": "TrendForce",
         "url": "https://www.trendforce.com/presscenter/news/20261106-13297.html",
-        "retrieved_at": "2026-11-10"
+        "retrieved_at": "2026-11-11"
       }
     ],
     "data_quality": "partial",
@@ -186,158 +191,170 @@
   },
   "briefing": {
     "schema_version": 1,
-    "date": "2026-11-10",
-    "title": "DDR早报 2026-11-10",
-    "summary": "爬虫版早报：采集到 1/8 个价格点，11 条行业动态。",
-    "body_markdown": "## 价格面\n\n今日从公开渠道采集到 1/8 个规格的价格数据。\n\n## 供给面\n\n暂无自动分析（爬虫版仅采集原始数据）。\n\n## 厂商动态\n\n- Persistently High DRAM Prices Drive Adoption of Reballed Memory, with Smartphone Penetration Expected to Reach 7–9% in 2027, Says TrendForce\n- \n- \n- \n- \n\n## 关注点\n\n- 价格数据来源于公开渠道，可能存在延迟\n- 建议交叉验证 TrendForce、DRAMeXchange 等专业渠道报价",
+    "date": "2026-11-11",
+    "title": "DDR早报 2026-11-11",
+    "summary": "爬虫版早报：采集到 1/8 个价格点，12 条行业动态。",
+    "body_markdown": "## 价格面\n\n今日从公开渠道采集到 1/8 个规格的价格数据。\n\n## 供给面\n\n暂无自动分析（爬虫版仅采集原始数据）。\n\n## 厂商动态\n\n- Mounting Finished-Goods Inventories Prompt Some PC OEMs to Adjust Memory Procurement Plans for 2027, Says TrendForce\n- Persistently High DRAM Prices Drive Adoption of Reballed Memory, with Smartphone Penetration Expected to Reach 7–9% in 2027, Says TrendForce\n- \n- \n- \n\n## 关注点\n\n- 价格数据来源于公开渠道，可能存在延迟\n- 建议交叉验证 TrendForce、DRAMeXchange 等专业渠道报价",
     "price_overview_markdown": "今日采集价格 1/8 个规格。",
     "supply_demand_points": [
       "爬虫版暂不提供供需分析"
     ],
     "outlook_markdown": null,
     "watch_items": [
+      "Mounting Finished-Goods Inventories Prompt Some PC",
       "Persistently High DRAM Prices Drive Adoption of Re",
-      "",
       ""
     ],
     "bullish_points": [],
     "bearish_points": [],
     "confidence": "low",
-    "generated_at": "2026-11-10T08:29:54.777988Z"
+    "generated_at": "2026-11-11T07:50:54.426659Z"
   },
   "news": {
     "schema_version": 1,
-    "date": "2026-11-10",
+    "date": "2026-11-11",
     "items": [
       {
-        "id": "2026-11-10-news-0",
+        "id": "2026-11-11-news-0",
+        "vendor": "Other",
+        "tags": [],
+        "title": "Mounting Finished-Goods Inventories Prompt Some PC OEMs to Adjust Memory Procurement Plans for 2027, Says TrendForce",
+        "summary": "Mounting Finished-Goods Inventories Prompt Some PC OEMs to Adjust Memory Procurement Plans for 2027, Says TrendForce",
+        "url": "https://www.trendforce.com/presscenter/news/20261111-13303.html",
+        "source_name": "TrendForce",
+        "published_date": "2026-11-11",
+        "impact": "other",
+        "importance": "medium"
+      },
+      {
+        "id": "2026-11-11-news-1",
         "vendor": "Other",
         "tags": [],
         "title": "Persistently High DRAM Prices Drive Adoption of Reballed Memory, with Smartphone Penetration Expected to Reach 7–9% in 2027, Says TrendForce",
         "summary": "Persistently High DRAM Prices Drive Adoption of Reballed Memory, with Smartphone Penetration Expected to Reach 7–9% in 2027, Says TrendForce",
         "url": "https://www.trendforce.com/presscenter/news/20261106-13297.html",
         "source_name": "TrendForce",
-        "published_date": "2026-11-10",
+        "published_date": "2026-11-11",
         "impact": "other",
         "importance": "medium"
       },
       {
-        "id": "2026-11-10-news-1",
+        "id": "2026-11-11-news-2",
+        "vendor": "Other",
+        "tags": [],
+        "title": "26Q4 DDR5 RDIMM合约价强势上涨10%至15%，CFM上调本月DDR5价格",
+        "summary": "26Q4 DDR5 RDIMM合约价强势上涨10%至15%，CFM上调本月DDR5价格",
+        "url": null,
+        "source_name": "ChinaFlashMarket",
+        "published_date": "2026-11-11",
+        "impact": "other",
+        "importance": "medium"
+      },
+      {
+        "id": "2026-11-11-news-3",
         "vendor": "Other",
         "tags": [],
         "title": "DDR4 16Gb 3200",
         "summary": "DDR4 16Gb 3200",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-11-10",
+        "published_date": "2026-11-11",
         "impact": "other",
-        "importance": "medium"
+        "importance": "low"
       },
       {
-        "id": "2026-11-10-news-2",
+        "id": "2026-11-11-news-4",
         "vendor": "Other",
         "tags": [],
         "title": "DDR4 8Gb 3200",
         "summary": "DDR4 8Gb 3200",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-11-10",
+        "published_date": "2026-11-11",
         "impact": "other",
-        "importance": "medium"
+        "importance": "low"
       },
       {
-        "id": "2026-11-10-news-3",
+        "id": "2026-11-11-news-5",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 24Gb Major",
         "summary": "DDR5 24Gb Major",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-11-10",
+        "published_date": "2026-11-11",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-11-10-news-4",
+        "id": "2026-11-11-news-6",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 16Gb Major",
         "summary": "DDR5 16Gb Major",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-11-10",
+        "published_date": "2026-11-11",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-11-10-news-5",
+        "id": "2026-11-11-news-7",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 16Gb eTT",
         "summary": "DDR5 16Gb eTT",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-11-10",
+        "published_date": "2026-11-11",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-11-10-news-6",
+        "id": "2026-11-11-news-8",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 RDIMM 32GB",
         "summary": "DDR5 RDIMM 32GB",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-11-10",
+        "published_date": "2026-11-11",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-11-10-news-7",
+        "id": "2026-11-11-news-9",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 RDIMM 64GB",
         "summary": "DDR5 RDIMM 64GB",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-11-10",
+        "published_date": "2026-11-11",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-11-10-news-8",
+        "id": "2026-11-11-news-10",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 RDIMM 96GB",
         "summary": "DDR5 RDIMM 96GB",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-11-10",
+        "published_date": "2026-11-11",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-11-10-news-9",
+        "id": "2026-11-11-news-11",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 UDIMM 8GB 5600",
         "summary": "DDR5 UDIMM 8GB 5600",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-11-10",
-        "impact": "other",
-        "importance": "low"
-      },
-      {
-        "id": "2026-11-10-news-10",
-        "vendor": "Other",
-        "tags": [],
-        "title": "DDR5 UDIMM 8GB 6000",
-        "summary": "DDR5 UDIMM 8GB 6000",
-        "url": null,
-        "source_name": "ChinaFlashMarket",
-        "published_date": "2026-11-10",
+        "published_date": "2026-11-11",
         "impact": "other",
         "importance": "low"
       }
