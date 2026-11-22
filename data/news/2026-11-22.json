@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "items": [
+    {
+      "id": "2026-11-22-news-0",
+      "vendor": "Other",
+      "tags": [],
+      "title": "NAND Flash Prices Set to Decline in 2027 as Chinese CSP Order Cuts Outweigh North American Demand Growth, Says TrendForce",
+      "summary": "NAND Flash Prices Set to Decline in 2027 as Chinese CSP Order Cuts Outweigh North American Demand Growth, Says TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20261119-13314.html",
+      "source_name": "TrendForce",
+      "published_date": "2026-11-22",
+      "impact": "other",
+      "importance": "medium"
+    },
+    {
+      "id": "2026-11-22-news-1",
+      "vendor": "Other",
+      "tags": [],
+      "title": "Global OLED Monitor Shipments Double YoY in 3Q26 as Rankings Shift Dramatically Among Top Five Brands, Says TrendForce",
+      "summary": "Global OLED Monitor Shipments Double YoY in 3Q26 as Rankings Shift Dramatically Among Top Five Brands, Says TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20261118-13311.html",
+      "source_name": "TrendForce",
+      "published_date": "2026-11-22",
+      "impact": "other",
+      "importance": "medium"
+    },
+    {
+      "id": "2026-11-22-news-2",
+      "vendor": "Other",
+      "tags": [],
+      "title": "Mounting Finished-Goods Inventories Prompt Some PC OEMs to Adjust Memory Procurement Plans for 2027, Says TrendForce",
+      "summary": "Mounting Finished-Goods Inventories Prompt Some PC OEMs to Adjust Memory Procurement Plans for 2027, Says TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20261111-13303.html",
+      "source_name": "TrendForce",
+      "published_date": "2026-11-22",
+      "impact": "other",
+      "importance": "medium"
+    },
+    {
+      "id": "2026-11-22-news-3",
+      "vendor": "Other",
+      "tags": [],
+      "title": "弱需求下个别存储厂商竞价较为激进，本周eMMC、部分行业SSD、LPDDR4X价格承压下行",
+      "summary": "弱需求下个别存储厂商竞价较为激进，本周eMMC、部分行业SSD、LPDDR4X价格承压下行",
+      "url": null,
+      "source_name": "ChinaFlashMarket",
+      "published_date": "2026-11-22",
+      "impact": "other",
+      "importance": "low"
+    },
+    {
+      "id": "2026-11-22-news-4",
+      "vendor": "Other",
+      "tags": [],
+      "title": "DDR4 16Gb 3200",
+      "summary": "DDR4 16Gb 3200",
+      "url": null,
+      "source_name": "ChinaFlashMarket",
+      "published_date": "2026-11-22",
+      "impact": "other",
+      "importance": "low"
+    },
+    {
+      "id": "2026-11-22-news-5",
+      "vendor": "Other",
+      "tags": [],
+      "title": "DDR4 8Gb 3200",
+      "summary": "DDR4 8Gb 3200",
+      "url": null,
+      "source_name": "ChinaFlashMarket",
+      "published_date": "2026-11-22",
+      "impact": "other",
+      "importance": "low"
+    },
+    {
+      "id": "2026-11-22-news-6",
+      "vendor": "Other",
+      "tags": [],
+      "title": "DDR5 24Gb Major",
+      "summary": "DDR5 24Gb Major",
+      "url": null,
+      "source_name": "ChinaFlashMarket",
+      "published_date": "2026-11-22",
+      "impact": "other",
+      "importance": "low"
+    },
+    {
+      "id": "2026-11-22-news-7",
+      "vendor": "Other",
+      "tags": [],
+      "title": "DDR5 16Gb Major",
+      "summary": "DDR5 16Gb Major",
+      "url": null,
+      "source_name": "ChinaFlashMarket",
+      "published_date": "2026-11-22",
+      "impact": "other",
+      "importance": "low"
+    },
+    {
+      "id": "2026-11-22-news-8",
+      "vendor": "Other",
+      "tags": [],
+      "title": "DDR5 16Gb eTT",
+      "summary": "DDR5 16Gb eTT",
+      "url": null,
+      "source_name": "ChinaFlashMarket",
+      "published_date": "2026-11-22",
+      "impact": "other",
+      "importance": "low"
+    },
+    {
+      "id": "2026-11-22-news-9",
+      "vendor": "Other",
+      "tags": [],
+      "title": "DDR5 RDIMM 32GB",
+      "summary": "DDR5 RDIMM 32GB",
+      "url": null,
+      "source_name": "ChinaFlashMarket",
+      "published_date": "2026-11-22",
+      "impact": "other",
+      "importance": "low"
+    },
+    {
+      "id": "2026-11-22-news-10",
+      "vendor": "Other",
+      "tags": [],
+      "title": "DDR5 RDIMM 64GB",
+      "summary": "DDR5 RDIMM 64GB",
+      "url": null,
+      "source_name": "ChinaFlashMarket",
+      "published_date": "2026-11-22",
+      "impact": "other",
+      "importance": "low"
+    },
+    {
+      "id": "2026-11-22-news-11",
+      "vendor": "Other",
+      "tags": [],
+      "title": "DDR5 RDIMM 96GB",
+      "summary": "DDR5 RDIMM 96GB",
+      "url": null,
+      "source_name": "ChinaFlashMarket",
+      "published_date": "2026-11-22",
+      "impact": "other",
+      "importance": "low"
+    }
+  ]
+}
