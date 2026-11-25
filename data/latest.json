@@ -1,9 +1,9 @@
 {
-  "date": "2026-11-24",
+  "date": "2026-11-25",
   "price": {
     "schema_version": 1,
-    "date": "2026-11-24",
-    "generated_at": "2026-11-24T11:08:29.123369Z",
+    "date": "2026-11-25",
+    "generated_at": "2026-11-25T09:56:42.943815Z",
     "currency_note": "USD unless currency field says otherwise",
     "granules": [
       {
@@ -177,18 +177,23 @@
     "sources": [
       {
         "name": "TrendForce",
+        "url": "https://www.trendforce.com/presscenter/news/20261125-13321.html",
+        "retrieved_at": "2026-11-25"
+      },
+      {
+        "name": "TrendForce",
         "url": "https://www.trendforce.com/presscenter/news/20261124-13318.html",
-        "retrieved_at": "2026-11-24"
+        "retrieved_at": "2026-11-25"
       },
       {
         "name": "TrendForce",
         "url": "https://www.trendforce.com/presscenter/news/20261119-13314.html",
-        "retrieved_at": "2026-11-24"
+        "retrieved_at": "2026-11-25"
       },
       {
         "name": "TrendForce",
         "url": "https://www.trendforce.com/presscenter/news/20261118-13311.html",
-        "retrieved_at": "2026-11-24"
+        "retrieved_at": "2026-11-25"
       }
     ],
     "data_quality": "partial",
@@ -196,170 +201,170 @@
   },
   "briefing": {
     "schema_version": 1,
-    "date": "2026-11-24",
-    "title": "DDR早报 2026-11-24",
-    "summary": "爬虫版早报：采集到 1/8 个价格点，13 条行业动态。",
-    "body_markdown": "## 价格面\n\n今日从公开渠道采集到 1/8 个规格的价格数据。\n\n## 供给面\n\n暂无自动分析（爬虫版仅采集原始数据）。\n\n## 厂商动态\n\n- AI Demand Squeezes Glass Fiber Cloth Supply and Drives Up PCB Prices, Raising COB/SMD LED Display Costs by 2% QoQ in 4Q26, Says TrendForce\n- NAND Flash Prices Set to Decline in 2027 as Chinese CSP Order Cuts Outweigh North American Demand Growth, Says TrendForce\n- Global OLED Monitor Shipments Double YoY in 3Q26 as Rankings Shift Dramatically Among Top Five Brands, Says TrendForce\n- \n- \n\n## 关注点\n\n- 价格数据来源于公开渠道，可能存在延迟\n- 建议交叉验证 TrendForce、DRAMeXchange 等专业渠道报价",
+    "date": "2026-11-25",
+    "title": "DDR早报 2026-11-25",
+    "summary": "爬虫版早报：采集到 1/8 个价格点，14 条行业动态。",
+    "body_markdown": "## 价格面\n\n今日从公开渠道采集到 1/8 个规格的价格数据。\n\n## 供给面\n\n暂无自动分析（爬虫版仅采集原始数据）。\n\n## 厂商动态\n\n- Cuts to Chinese CSP Demand Weigh on Price Outlook, Slowing Memory Industry Revenue Growth in 2027, Says TrendForce\n- AI Demand Squeezes Glass Fiber Cloth Supply and Drives Up PCB Prices, Raising COB/SMD LED Display Costs by 2% QoQ in 4Q26, Says TrendForce\n- NAND Flash Prices Set to Decline in 2027 as Chinese CSP Order Cuts Outweigh North American Demand Growth, Says TrendForce\n- Global OLED Monitor Shipments Double YoY in 3Q26 as Rankings Shift Dramatically Among Top Five Brands, Says TrendForce\n- \n\n## 关注点\n\n- 价格数据来源于公开渠道，可能存在延迟\n- 建议交叉验证 TrendForce、DRAMeXchange 等专业渠道报价",
     "price_overview_markdown": "今日采集价格 1/8 个规格。",
     "supply_demand_points": [
       "爬虫版暂不提供供需分析"
     ],
     "outlook_markdown": null,
     "watch_items": [
+      "Cuts to Chinese CSP Demand Weigh on Price Outlook,",
       "AI Demand Squeezes Glass Fiber Cloth Supply and Dr",
-      "NAND Flash Prices Set to Decline in 2027 as Chines",
-      "Global OLED Monitor Shipments Double YoY in 3Q26 a"
+      "NAND Flash Prices Set to Decline in 2027 as Chines"
     ],
     "bullish_points": [],
     "bearish_points": [],
     "confidence": "low",
-    "generated_at": "2026-11-24T11:08:29.123417Z"
+    "generated_at": "2026-11-25T09:56:42.943869Z"
   },
   "news": {
     "schema_version": 1,
-    "date": "2026-11-24",
+    "date": "2026-11-25",
     "items": [
       {
-        "id": "2026-11-24-news-0",
+        "id": "2026-11-25-news-0",
+        "vendor": "Other",
+        "tags": [],
+        "title": "Cuts to Chinese CSP Demand Weigh on Price Outlook, Slowing Memory Industry Revenue Growth in 2027, Says TrendForce",
+        "summary": "Cuts to Chinese CSP Demand Weigh on Price Outlook, Slowing Memory Industry Revenue Growth in 2027, Says TrendForce",
+        "url": "https://www.trendforce.com/presscenter/news/20261125-13321.html",
+        "source_name": "TrendForce",
+        "published_date": "2026-11-25",
+        "impact": "other",
+        "importance": "medium"
+      },
+      {
+        "id": "2026-11-25-news-1",
         "vendor": "Other",
         "tags": [],
         "title": "AI Demand Squeezes Glass Fiber Cloth Supply and Drives Up PCB Prices, Raising COB/SMD LED Display Costs by 2% QoQ in 4Q26, Says TrendForce",
         "summary": "AI Demand Squeezes Glass Fiber Cloth Supply and Drives Up PCB Prices, Raising COB/SMD LED Display Costs by 2% QoQ in 4Q26, Says TrendForce",
         "url": "https://www.trendforce.com/presscenter/news/20261124-13318.html",
         "source_name": "TrendForce",
-        "published_date": "2026-11-24",
+        "published_date": "2026-11-25",
         "impact": "other",
         "importance": "medium"
       },
       {
-        "id": "2026-11-24-news-1",
+        "id": "2026-11-25-news-2",
         "vendor": "Other",
         "tags": [],
         "title": "NAND Flash Prices Set to Decline in 2027 as Chinese CSP Order Cuts Outweigh North American Demand Growth, Says TrendForce",
         "summary": "NAND Flash Prices Set to Decline in 2027 as Chinese CSP Order Cuts Outweigh North American Demand Growth, Says TrendForce",
         "url": "https://www.trendforce.com/presscenter/news/20261119-13314.html",
         "source_name": "TrendForce",
-        "published_date": "2026-11-24",
+        "published_date": "2026-11-25",
         "impact": "other",
         "importance": "medium"
       },
       {
-        "id": "2026-11-24-news-2",
+        "id": "2026-11-25-news-3",
         "vendor": "Other",
         "tags": [],
         "title": "Global OLED Monitor Shipments Double YoY in 3Q26 as Rankings Shift Dramatically Among Top Five Brands, Says TrendForce",
         "summary": "Global OLED Monitor Shipments Double YoY in 3Q26 as Rankings Shift Dramatically Among Top Five Brands, Says TrendForce",
         "url": "https://www.trendforce.com/presscenter/news/20261118-13311.html",
         "source_name": "TrendForce",
-        "published_date": "2026-11-24",
-        "impact": "other",
-        "importance": "medium"
-      },
-      {
-        "id": "2026-11-24-news-3",
-        "vendor": "Other",
-        "tags": [],
-        "title": "弱需求下个别存储厂商竞价较为激进，本周eMMC、部分行业SSD、LPDDR4X价格承压下行",
-        "summary": "弱需求下个别存储厂商竞价较为激进，本周eMMC、部分行业SSD、LPDDR4X价格承压下行",
-        "url": null,
-        "source_name": "ChinaFlashMarket",
-        "published_date": "2026-11-24",
+        "published_date": "2026-11-25",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-11-24-news-4",
+        "id": "2026-11-25-news-4",
+        "vendor": "Other",
+        "tags": [],
+        "title": "行业及渠道SSD、DDR4内存条价格调降，本周起新增2Tb QLC及行业DDR5内存条现货价、UFS3.1/4.0合约价",
+        "summary": "行业及渠道SSD、DDR4内存条价格调降，本周起新增2Tb QLC及行业DDR5内存条现货价、UFS3.1/4.0合约价",
+        "url": null,
+        "source_name": "ChinaFlashMarket",
+        "published_date": "2026-11-25",
+        "impact": "other",
+        "importance": "low"
+      },
+      {
+        "id": "2026-11-25-news-5",
         "vendor": "Other",
         "tags": [],
         "title": "DDR4 16Gb 3200",
         "summary": "DDR4 16Gb 3200",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-11-24",
+        "published_date": "2026-11-25",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-11-24-news-5",
+        "id": "2026-11-25-news-6",
         "vendor": "Other",
         "tags": [],
         "title": "DDR4 8Gb 3200",
         "summary": "DDR4 8Gb 3200",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-11-24",
+        "published_date": "2026-11-25",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-11-24-news-6",
+        "id": "2026-11-25-news-7",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 24Gb Major",
         "summary": "DDR5 24Gb Major",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-11-24",
+        "published_date": "2026-11-25",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-11-24-news-7",
+        "id": "2026-11-25-news-8",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 16Gb Major",
         "summary": "DDR5 16Gb Major",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-11-24",
+        "published_date": "2026-11-25",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-11-24-news-8",
+        "id": "2026-11-25-news-9",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 16Gb eTT",
         "summary": "DDR5 16Gb eTT",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-11-24",
+        "published_date": "2026-11-25",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-11-24-news-9",
+        "id": "2026-11-25-news-10",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 RDIMM 32GB",
         "summary": "DDR5 RDIMM 32GB",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-11-24",
+        "published_date": "2026-11-25",
         "impact": "other",
         "importance": "low"
       },
       {
-        "id": "2026-11-24-news-10",
+        "id": "2026-11-25-news-11",
         "vendor": "Other",
         "tags": [],
         "title": "DDR5 RDIMM 64GB",
         "summary": "DDR5 RDIMM 64GB",
         "url": null,
         "source_name": "ChinaFlashMarket",
-        "published_date": "2026-11-24",
-        "impact": "other",
-        "importance": "low"
-      },
-      {
-        "id": "2026-11-24-news-11",
-        "vendor": "Other",
-        "tags": [],
-        "title": "DDR5 RDIMM 96GB",
-        "summary": "DDR5 RDIMM 96GB",
-        "url": null,
-        "source_name": "ChinaFlashMarket",
-        "published_date": "2026-11-24",
+        "published_date": "2026-11-25",
         "impact": "other",
         "importance": "low"
       }
