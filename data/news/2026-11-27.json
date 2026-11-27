@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-27",
+  "items": [
+    {
+      "id": "2026-11-27-news-0",
+      "vendor": "Other",
+      "tags": [],
+      "title": "Limited Demand Visibility and Growing Supply Chain Caution Heighten Risk of DRAM Contract Price Declines in 2028, Says TrendForce",
+      "summary": "Limited Demand Visibility and Growing Supply Chain Caution Heighten Risk of DRAM Contract Price Declines in 2028, Says TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20261127-13327.html",
+      "source_name": "TrendForce",
+      "published_date": "2026-11-27",
+      "impact": "other",
+      "importance": "medium"
+    },
+    {
+      "id": "2026-11-27-news-1",
+      "vendor": "Other",
+      "tags": [],
+      "title": "Cuts to Chinese CSP Demand Weigh on Price Outlook, Slowing Memory Industry Revenue Growth in 2027, Says TrendForce",
+      "summary": "Cuts to Chinese CSP Demand Weigh on Price Outlook, Slowing Memory Industry Revenue Growth in 2027, Says TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20261125-13321.html",
+      "source_name": "TrendForce",
+      "published_date": "2026-11-27",
+      "impact": "other",
+      "importance": "medium"
+    },
+    {
+      "id": "2026-11-27-news-2",
+      "vendor": "Other",
+      "tags": [],
+      "title": "AI Demand Squeezes Glass Fiber Cloth Supply and Drives Up PCB Prices, Raising COB/SMD LED Display Costs by 2% QoQ in 4Q26, Says TrendForce",
+      "summary": "AI Demand Squeezes Glass Fiber Cloth Supply and Drives Up PCB Prices, Raising COB/SMD LED Display Costs by 2% QoQ in 4Q26, Says TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20261124-13318.html",
+      "source_name": "TrendForce",
+      "published_date": "2026-11-27",
+      "impact": "other",
+      "importance": "medium"
+    },
+    {
+      "id": "2026-11-27-news-3",
+      "vendor": "Other",
+      "tags": [],
+      "title": "NAND Flash Prices Set to Decline in 2027 as Chinese CSP Order Cuts Outweigh North American Demand Growth, Says TrendForce",
+      "summary": "NAND Flash Prices Set to Decline in 2027 as Chinese CSP Order Cuts Outweigh North American Demand Growth, Says TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20261119-13314.html",
+      "source_name": "TrendForce",
+      "published_date": "2026-11-27",
+      "impact": "other",
+      "importance": "low"
+    },
+    {
+      "id": "2026-11-27-news-4",
+      "vendor": "Other",
+      "tags": [],
+      "title": "行业及渠道SSD、DDR4内存条价格调降，本周起新增2Tb QLC及行业DDR5内存条现货价、UFS3.1/4.0合约价",
+      "summary": "行业及渠道SSD、DDR4内存条价格调降，本周起新增2Tb QLC及行业DDR5内存条现货价、UFS3.1/4.0合约价",
+      "url": null,
+      "source_name": "ChinaFlashMarket",
+      "published_date": "2026-11-27",
+      "impact": "other",
+      "importance": "low"
+    },
+    {
+      "id": "2026-11-27-news-5",
+      "vendor": "Other",
+      "tags": [],
+      "title": "DDR4 16Gb 3200",
+      "summary": "DDR4 16Gb 3200",
+      "url": null,
+      "source_name": "ChinaFlashMarket",
+      "published_date": "2026-11-27",
+      "impact": "other",
+      "importance": "low"
+    },
+    {
+      "id": "2026-11-27-news-6",
+      "vendor": "Other",
+      "tags": [],
+      "title": "DDR4 8Gb 3200",
+      "summary": "DDR4 8Gb 3200",
+      "url": null,
+      "source_name": "ChinaFlashMarket",
+      "published_date": "2026-11-27",
+      "impact": "other",
+      "importance": "low"
+    },
+    {
+      "id": "2026-11-27-news-7",
+      "vendor": "Other",
+      "tags": [],
+      "title": "DDR5 24Gb Major",
+      "summary": "DDR5 24Gb Major",
+      "url": null,
+      "source_name": "ChinaFlashMarket",
+      "published_date": "2026-11-27",
+      "impact": "other",
+      "importance": "low"
+    },
+    {
+      "id": "2026-11-27-news-8",
+      "vendor": "Other",
+      "tags": [],
+      "title": "DDR5 16Gb Major",
+      "summary": "DDR5 16Gb Major",
+      "url": null,
+      "source_name": "ChinaFlashMarket",
+      "published_date": "2026-11-27",
+      "impact": "other",
+      "importance": "low"
+    },
+    {
+      "id": "2026-11-27-news-9",
+      "vendor": "Other",
+      "tags": [],
+      "title": "DDR5 16Gb eTT",
+      "summary": "DDR5 16Gb eTT",
+      "url": null,
+      "source_name": "ChinaFlashMarket",
+      "published_date": "2026-11-27",
+      "impact": "other",
+      "importance": "low"
+    },
+    {
+      "id": "2026-11-27-news-10",
+      "vendor": "Other",
+      "tags": [],
+      "title": "DDR5 RDIMM 32GB",
+      "summary": "DDR5 RDIMM 32GB",
+      "url": null,
+      "source_name": "ChinaFlashMarket",
+      "published_date": "2026-11-27",
+      "impact": "other",
+      "importance": "low"
+    },
+    {
+      "id": "2026-11-27-news-11",
+      "vendor": "Other",
+      "tags": [],
+      "title": "DDR5 RDIMM 64GB",
+      "summary": "DDR5 RDIMM 64GB",
+      "url": null,
+      "source_name": "ChinaFlashMarket",
+      "published_date": "2026-11-27",
+      "impact": "other",
+      "importance": "low"
+    }
+  ]
+}

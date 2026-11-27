@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-26T09:40:22.142334Z",
+  "updated": "2026-11-27T09:45:25.998060Z",
   "series_meta": {
     "ddr4_8gbit": {
       "label": "DDR4 8Gb",
@@ -290,6 +290,10 @@
       {
         "d": "2026-11-26",
         "p": null
+      },
+      {
+        "d": "2026-11-27",
+        "p": null
       }
     ],
     "ddr4_16gbit": [
@@ -527,6 +531,10 @@
       },
       {
         "d": "2026-11-26",
+        "p": null
+      },
+      {
+        "d": "2026-11-27",
         "p": null
       }
     ],
@@ -766,6 +774,10 @@
       {
         "d": "2026-11-26",
         "p": null
+      },
+      {
+        "d": "2026-11-27",
+        "p": null
       }
     ],
     "ddr5_16gbit": [
@@ -1003,6 +1015,10 @@
       },
       {
         "d": "2026-11-26",
+        "p": 5.0
+      },
+      {
+        "d": "2026-11-27",
         "p": 5.0
       }
     ],
@@ -1242,6 +1258,10 @@
       {
         "d": "2026-11-26",
         "p": null
+      },
+      {
+        "d": "2026-11-27",
+        "p": null
       }
     ],
     "ddr5_udimm_16gb": [
@@ -1479,6 +1499,10 @@
       },
       {
         "d": "2026-11-26",
+        "p": null
+      },
+      {
+        "d": "2026-11-27",
         "p": null
       }
     ],
@@ -1718,6 +1742,10 @@
       {
         "d": "2026-11-26",
         "p": null
+      },
+      {
+        "d": "2026-11-27",
+        "p": null
       }
     ],
     "ddr5_rdimm_64gb": [
@@ -1955,6 +1983,10 @@
       },
       {
         "d": "2026-11-26",
+        "p": null
+      },
+      {
+        "d": "2026-11-27",
         "p": null
       }
     ],
@@ -2194,6 +2226,10 @@
       {
         "d": "2026-11-26",
         "p": null
+      },
+      {
+        "d": "2026-11-27",
+        "p": null
       }
     ],
     "ddr5_8gbit_contract": [
@@ -2432,10 +2468,24 @@
       {
         "d": "2026-11-26",
         "p": null
+      },
+      {
+        "d": "2026-11-27",
+        "p": null
       }
     ]
   },
   "briefings_index": [
+    {
+      "date": "2026-11-27",
+      "title": "DDR早报 2026-11-27",
+      "summary": "爬虫版早报：采集到 1/8 个价格点，14 条行业动态。",
+      "watch_items": [
+        "Limited Demand Visibility and Growing Supply Chain",
+        "Cuts to Chinese CSP Demand Weigh on Price Outlook,",
+        "AI Demand Squeezes Glass Fiber Cloth Supply and Dr"
+      ]
+    },
     {
       "date": "2026-11-26",
       "title": "DDR早报 2026-11-26",
@@ -3028,6 +3078,90 @@
     }
   ],
   "news_index": [
+    {
+      "date": "2026-11-27",
+      "vendor": "Other",
+      "title": "Limited Demand Visibility and Growing Supply Chain Caution Heighten Risk of DRAM Contract Price Declines in 2028, Says TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20261127-13327.html",
+      "importance": "medium"
+    },
+    {
+      "date": "2026-11-27",
+      "vendor": "Other",
+      "title": "Cuts to Chinese CSP Demand Weigh on Price Outlook, Slowing Memory Industry Revenue Growth in 2027, Says TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20261125-13321.html",
+      "importance": "medium"
+    },
+    {
+      "date": "2026-11-27",
+      "vendor": "Other",
+      "title": "AI Demand Squeezes Glass Fiber Cloth Supply and Drives Up PCB Prices, Raising COB/SMD LED Display Costs by 2% QoQ in 4Q26, Says TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20261124-13318.html",
+      "importance": "medium"
+    },
+    {
+      "date": "2026-11-27",
+      "vendor": "Other",
+      "title": "NAND Flash Prices Set to Decline in 2027 as Chinese CSP Order Cuts Outweigh North American Demand Growth, Says TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20261119-13314.html",
+      "importance": "low"
+    },
+    {
+      "date": "2026-11-27",
+      "vendor": "Other",
+      "title": "行业及渠道SSD、DDR4内存条价格调降，本周起新增2Tb QLC及行业DDR5内存条现货价、UFS3.1/4.0合约价",
+      "url": null,
+      "importance": "low"
+    },
+    {
+      "date": "2026-11-27",
+      "vendor": "Other",
+      "title": "DDR4 16Gb 3200",
+      "url": null,
+      "importance": "low"
+    },
+    {
+      "date": "2026-11-27",
+      "vendor": "Other",
+      "title": "DDR4 8Gb 3200",
+      "url": null,
+      "importance": "low"
+    },
+    {
+      "date": "2026-11-27",
+      "vendor": "Other",
+      "title": "DDR5 24Gb Major",
+      "url": null,
+      "importance": "low"
+    },
+    {
+      "date": "2026-11-27",
+      "vendor": "Other",
+      "title": "DDR5 16Gb Major",
+      "url": null,
+      "importance": "low"
+    },
+    {
+      "date": "2026-11-27",
+      "vendor": "Other",
+      "title": "DDR5 16Gb eTT",
+      "url": null,
+      "importance": "low"
+    },
+    {
+      "date": "2026-11-27",
+      "vendor": "Other",
+      "title": "DDR5 RDIMM 32GB",
+      "url": null,
+      "importance": "low"
+    },
+    {
+      "date": "2026-11-27",
+      "vendor": "Other",
+      "title": "DDR5 RDIMM 64GB",
+      "url": null,
+      "importance": "low"
+    },
     {
       "date": "2026-11-26",
       "vendor": "Other",
